@@ -43,6 +43,7 @@ class Shop extends React.Component {
     return (
       <span>
         <div
+          className="shop"
           onMouseEnter={e => {
             this.showDropDown();
           }}

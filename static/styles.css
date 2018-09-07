@@ -7,18 +7,27 @@
   border-width: 1px 1px 0px 1px; */
   /* padding-top: 1em; */
   box-shadow: grey 0px 1px 8px;
-  box-direction: reverse;
+  /* vertical-align: 1em; */
+  /* align-content: 1em; */
+  /* box-align: end; */
+  /* margin-bottom: 0px; */
+  /* box-direction: reverse; */
 }
 .tabs {
   float: left;
-  display: block;
+  display: flex;
+  justify-content: center;
+  /* margin-top: 20px; */
+  vertical-align: 0em;
   position: relative;
   text-transform: uppercase;
   height: 40px;
   cursor: default;
   padding-left: 28px;
   padding-right: 28px;
+  padding-top: 22px;
   letter-spacing: 0.0625em;
+  text-align: justify;
 }
 .specificCatEntry {
   float: right;
@@ -34,6 +43,9 @@
   padding-bottom: 1em;
   border-style: solid;
   border-width: 0px 1px 0px 1px;
+}
+.shop {
+  padding-top: 22px;
 }
 h1 {
   position: relative;
