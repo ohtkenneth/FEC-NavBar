@@ -12,7 +12,7 @@ var App = () => {
       </div>
       <h1 className="title">Sephora</h1>
       <Search />
-      <div>
+      <div className="bottomBar">
         <Shop />
         <Tabs />
       </div>
