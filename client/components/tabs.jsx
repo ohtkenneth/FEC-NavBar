@@ -16,32 +16,32 @@ class Tabs extends React.Component {
       toggleDropDown: false,
       dropDownName: ''
     };
-    this.showDropDown = this.showDropDown.bind(this);
+    // this.showDropDown = this.showDropDown.bind(this);
   }
-  showDropDown(e) {
-    this.setState({
-      toggleDropDown: true,
-      dropDownName: e
-    });
-  }
-  hideDropDown(e) {
-    this.setState({
-      toggleDropDown: false,
-      dropDownName: e
-    });
-  }
+  // showDropDown(e) {
+  //   this.setState({
+  //     toggleDropDown: true,
+  //     dropDownName: e
+  //   });
+  // }
+  // hideDropDown(e) {
+  //   this.setState({
+  //     toggleDropDown: false,
+  //     dropDownName: e
+  //   });
+  // }
   render() {
     return (
       <div>
         <div>
           {this.state.tabNames.map((name, index) => {
             return (
-              <Tab key={index} name={name} showDropDown={this.showDropDown} />
+              <Tab key={index} name={name} showDropDown={this.props.showDrop} />
             );
           })}
         </div>
         <div>
-          <br />
+          {/* <br />
           {this.state.toggleDropDown ? (
             <NavDropDown
               name={this.state.dropDownName}
@@ -49,7 +49,7 @@ class Tabs extends React.Component {
             />
           ) : (
             <div />
-          )}
+          )} */}
         </div>
       </div>
     );

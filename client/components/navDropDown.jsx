@@ -12,7 +12,7 @@ class NavDropDown extends React.Component {
       <div
         className="NavDropDown"
         onMouseLeave={() => {
-          props.hideDropDown(props.name);
+          this.props.hideDropDown(this.props.name);
         }}
       >
         This is the Nav Drop Down
