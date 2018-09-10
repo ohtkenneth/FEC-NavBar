@@ -18,18 +18,6 @@ class Tabs extends React.Component {
     };
     // this.showDropDown = this.showDropDown.bind(this);
   }
-  // showDropDown(e) {
-  //   this.setState({
-  //     toggleDropDown: true,
-  //     dropDownName: e
-  //   });
-  // }
-  // hideDropDown(e) {
-  //   this.setState({
-  //     toggleDropDown: false,
-  //     dropDownName: e
-  //   });
-  // }
   render() {
     return (
       <div>
@@ -39,17 +27,6 @@ class Tabs extends React.Component {
               <Tab key={index} name={name} showDropDown={this.props.showDrop} />
             );
           })}
-        </div>
-        <div>
-          {/* <br />
-          {this.state.toggleDropDown ? (
-            <NavDropDown
-              name={this.state.dropDownName}
-              hideDropDown={this.hideDropDown}
-            />
-          ) : (
-            <div />
-          )} */}
         </div>
       </div>
     );

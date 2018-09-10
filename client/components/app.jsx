@@ -5,6 +5,8 @@ import Shop from './shop.jsx';
 import Tabs from './tabs.jsx';
 import Signup from './signup.jsx';
 import NavDropDown from './navDropDown.jsx';
+import Basket from './Basket.jsx';
+import Loves from './Loves.jsx';
 // import bannerimg from '../Images/banner.png';
 class App extends React.Component {
   constructor(props) {
@@ -30,15 +32,54 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <div>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            flexDirection: 'row'
+          }}
+        >
           <img src="https://www.sephora.com/contentimages/homepage/090418/Homepage/DesktopMweb/2018-09-04-hp-persistent-banner-labor-day-us-slice.jpg" />
         </div>
-        <div style={{ flex: 1, flexDirection: 'row' }}>
-          <h1 className="title">Sephora</h1>
-          <Search />
-          <Signup />
+        {/* blackbar */}
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            backgroundColor: 'black',
+            padding: '4px 0px 4px 0px',
+            color: 'white',
+            fontFamily: 'Helvetica',
+            fontSize: '14px'
+          }}
+        >
+          <div>3 Free Samples with every Purchase</div>
+          <div>Reorder</div>
+          <div>Track Order</div>
+          <div>Find a Store</div>
+          <div>Country</div>
         </div>
-        <div className="bottomBar">
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            flexDirection: 'row'
+          }}
+        >
+          <Search />
+          <h1 className="title">Sephora</h1>
+          <Signup />
+          <Loves />
+          <Basket />
+        </div>
+        <div
+          className="bottomBar"
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            flexDirection: 'row'
+          }}
+        >
           <Shop />
           <Tabs showDrop={this.showDrop} hideDrop={this.hideDrop} />
         </div>
@@ -51,6 +92,27 @@ class App extends React.Component {
         ) : (
           <div />
         )}
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            backgroundColor: 'black',
+            color: 'white',
+            fontFamily: 'Helvetica',
+            padding: '4px 0px 4px 0px'
+          }}
+        >
+          <a
+            style={{
+              color: 'white',
+              fontFamily: 'Helvetica',
+              fontSize: '14px'
+            }}
+          >
+            SPOTS OPEN! GET THE BEST BEAUTY SUBSCRIPTION BOX FOR JUST $10/MONTH.
+            SUBSCRIBE NOW >
+          </a>
+        </div>
       </div>
     );
   }
