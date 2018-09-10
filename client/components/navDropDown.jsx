@@ -10,7 +10,11 @@ class NavDropDown extends React.Component {
   render() {
     return (
       <div
-        style={{ position: 'absolute', grid: 1 }}
+        style={{
+          position: 'absolute',
+          display: 'flex',
+          backgroundColor: 'white'
+        }}
         className="NavDropDown"
         onMouseLeave={() => {
           this.props.hideDropDown(this.props.name);

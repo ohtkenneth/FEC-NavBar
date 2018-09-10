@@ -63,7 +63,8 @@ class App extends React.Component {
           style={{
             display: 'flex',
             justifyContent: 'center',
-            flexDirection: 'row'
+            flexDirection: 'row',
+            alignItems: 'center'
           }}
         >
           <Search />
@@ -83,15 +84,22 @@ class App extends React.Component {
           <Shop />
           <Tabs showDrop={this.showDrop} hideDrop={this.hideDrop} />
         </div>
-
-        {this.state.navDropDownToggle ? (
-          <NavDropDown
-            name={this.state.navDropName}
-            hideDropDown={this.hideDrop}
-          />
-        ) : (
-          <div />
-        )}
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            flexDirection: 'row'
+          }}
+        >
+          {this.state.navDropDownToggle ? (
+            <NavDropDown
+              name={this.state.navDropName}
+              hideDropDown={this.hideDrop}
+            />
+          ) : (
+            <div />
+          )}
+        </div>
         <div
           style={{
             display: 'flex',
@@ -99,7 +107,8 @@ class App extends React.Component {
             backgroundColor: 'black',
             color: 'white',
             fontFamily: 'Helvetica',
-            padding: '4px 0px 4px 0px'
+            padding: '4px 0px 4px 0px',
+            zIndex: '0'
           }}
         >
           <a
