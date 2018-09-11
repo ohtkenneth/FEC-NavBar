@@ -15,12 +15,10 @@ class Basket extends React.Component {
   }
   render() {
     return (
-      <div>
-        <div onMouseOver={this.handleDrop}>shopping cart</div>
+      <div onMouseEnter={this.handleDrop} onMouseLeave={this.handleDrop}>
+        <div>shopping cart</div>
         {this.state.toggleDropDown ? (
-          <div onMouseLeave={this.handleDrop}>
-            Your shopping basket is empty
-          </div>
+          <div>Your shopping basket is empty</div>
         ) : (
           <div />
         )}

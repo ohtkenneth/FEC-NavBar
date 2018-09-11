@@ -22,7 +22,7 @@ class Signup extends React.Component {
   }
   render() {
     return (
-      <div onMouseEnter={this.handleDropdown}>
+      <div onMouseEnter={this.handleDropdown} onMouseLeave={this.handleDropout}>
         <h3>Hello there beautiful</h3>
         {this.state.dropdown ? (
           <SignupDropdown dropout={this.handleDropout} />
