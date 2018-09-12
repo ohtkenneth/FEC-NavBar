@@ -4,13 +4,21 @@ var SignupDropdown = props => {
   return (
     <div
       // onMouseLeave={props.dropout}
-      style={{ position: 'absolute', backgroundColor: 'white' }}
+      style={{
+        position: 'absolute',
+        backgroundColor: 'white',
+        zIndex: 999
+      }}
     >
-      this is a drop down
-      <div>
-        here are some more drop downs
-        <div>and another</div>
-      </div>
+      <br />
+      <div>Profile</div>
+      <div>Beauty Insider</div>
+      <div>Lists</div>
+      <div>Account</div>
+      <br />
+      <div>Orders</div>
+      <div>Reservations</div>
+      <div>Rewards Bazaar</div>
     </div>
   );
 };

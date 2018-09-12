@@ -8,22 +8,20 @@ class Signup extends React.Component {
       dropdown: false
     };
     this.handleDropdown = this.handleDropdown.bind(this);
-    this.handleDropout = this.handleDropout.bind(this);
   }
   handleDropdown() {
     this.setState({
-      dropdown: true
-    });
-  }
-  handleDropout() {
-    this.setState({
-      dropdown: false
+      dropdown: !this.state.dropdown
     });
   }
   render() {
     return (
-      <div onMouseEnter={this.handleDropdown} onMouseLeave={this.handleDropout}>
-        <h3>Hello there beautiful</h3>
+      <div
+        onMouseEnter={this.handleDropdown}
+        onMouseLeave={this.handleDropdown}
+      >
+        <h3>Hi, beautiful</h3>
+        <div>Sign In or Register</div>
         {this.state.dropdown ? (
           <SignupDropdown dropout={this.handleDropout} />
         ) : (

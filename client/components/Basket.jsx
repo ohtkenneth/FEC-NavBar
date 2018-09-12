@@ -15,10 +15,31 @@ class Basket extends React.Component {
   }
   render() {
     return (
-      <div onMouseEnter={this.handleDrop} onMouseLeave={this.handleDrop}>
+      <div
+        style={{
+          postion: 'absolute',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          zIndex: 999
+        }}
+        onMouseEnter={this.handleDrop}
+        onMouseLeave={this.handleDrop}
+      >
         <div>shopping cart</div>
         {this.state.toggleDropDown ? (
-          <div>Your shopping basket is empty</div>
+          <div
+            style={{
+              postion: 'absolute',
+              zIndex: 999
+            }}
+          >
+            <div>Your basket is empty</div>
+            <p>Sign in to see items you mayt have added previously.</p>
+            <button>SIGN IN</button>
+            <p>See samples, rewards and promotions in </p>
+            <a>basket</a>
+          </div>
         ) : (
           <div />
         )}

@@ -31,7 +31,7 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div style={{ margin: 'auto', width: '65%' }}>
         <div
           style={{
             display: 'flex',
@@ -47,13 +47,13 @@ class App extends React.Component {
             display: 'flex',
             justifyContent: 'center',
             backgroundColor: 'black',
-            padding: '4px 0px 4px 0px',
+            padding: '4px 2px 4px 2px',
             color: 'white',
             fontFamily: 'Helvetica',
             fontSize: '14px'
           }}
         >
-          <div>3 Free Samples with every Purchase</div>
+          <div style={{ flexGrow: 2 }}>3 Free Samples with every Purchase</div>
           <div>Reorder</div>
           <div>Track Order</div>
           <div>Find a Store</div>
@@ -62,13 +62,13 @@ class App extends React.Component {
         <div
           style={{
             display: 'flex',
-            justifyContent: 'center',
+            justifyContent: 'space-between',
             flexDirection: 'row',
             alignItems: 'center'
           }}
         >
           <Search />
-          <h1 className="title">Sephora</h1>
+          <h1 style={{ flexGrow: 2, textAlign: 'center' }}>SEPHORA</h1>
           <Signup />
           <Loves />
           <Basket />

@@ -41,15 +41,13 @@ class Shop extends React.Component {
 
   render() {
     return (
-      <span>
-        <div
-          className="shop"
-          onMouseEnter={e => {
-            this.showDropDown();
-          }}
-        >
-          SHOP
-        </div>
+      <span
+        onMouseEnter={e => {
+          this.showDropDown();
+        }}
+        onMouseLeave={this.showDropDown}
+      >
+        <div className="shop">SHOP</div>
         <br />
         <div className="shopDrops">
           <span>
