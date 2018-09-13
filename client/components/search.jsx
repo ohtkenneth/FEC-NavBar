@@ -27,15 +27,37 @@ class Search extends React.Component {
         onPointerEnter={this.showSearches}
         onPointerLeave={this.showSearches}
       >
-        <div />
-        <input type="text" placeholder="Search" id="search" />
-        {this.state.toggleDrop ? (
-          this.state.previous.map(search => {
-            return <div>{search}</div>;
-          })
-        ) : (
+        <div>
           <div />
-        )}
+          <input
+            style={{
+              display: 'block',
+              fontFamily: 'helvetica',
+              fontSize: '14px',
+              width: '200px',
+              height: '40px',
+              paddingLeft: '12px',
+              paddingRight: '12px',
+              color: '#000',
+              backgroundColor: '#fff',
+              borderWidth: '1px',
+              borderRadius: '4px',
+              borderColor: '#ccc'
+            }}
+            type="text"
+            placeholder="Search"
+            id="search"
+          />
+          {this.state.toggleDrop ? (
+            <div style={{ position: 'absolute', backgroundColor: 'white' }}>
+              {this.state.previous.map(search => {
+                return <div>{search}</div>;
+              })}
+            </div>
+          ) : (
+            <div />
+          )}
+        </div>
       </form>
     );
   }

@@ -84,7 +84,7 @@ class App extends React.Component {
           <Shop />
           <Tabs showDrop={this.showDrop} hideDrop={this.hideDrop} />
         </div>
-        <div
+        {/* <div
           style={{
             display: 'flex',
             justifyContent: 'center',
@@ -99,7 +99,7 @@ class App extends React.Component {
           ) : (
             <div />
           )}
-        </div>
+        </div> */}
         <div
           style={{
             display: 'flex',

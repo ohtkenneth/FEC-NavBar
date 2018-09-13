@@ -47,7 +47,14 @@ class Shop extends React.Component {
         }}
         onMouseLeave={this.showDropDown}
       >
-        <div className="shop">SHOP</div>
+        <div
+          style={{
+            paddingTop: '22px'
+          }}
+          className="shop"
+        >
+          SHOP
+        </div>
         <br />
         <div className="shopDrops">
           <span>

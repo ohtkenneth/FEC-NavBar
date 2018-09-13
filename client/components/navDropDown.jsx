@@ -12,6 +12,12 @@ class NavDropDown extends React.Component {
       <div
         style={{
           position: 'absolute',
+          left: 0,
+          right: 0,
+          margin: 'auto',
+          // marginLeft: '-50px',
+          // top: '50%',
+          // marginTop: '-50px',
           display: 'flex',
           flexDirection: 'row',
           backgroundColor: 'white',

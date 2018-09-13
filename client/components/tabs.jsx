@@ -16,18 +16,28 @@ class Tabs extends React.Component {
       toggleDropDown: false,
       dropDownName: ''
     };
-    // this.showDropDown = this.showDropDown.bind(this);
+    this.showDropDown = this.showDropDown.bind(this);
+  }
+  showDropDown() {
+    this.setState({
+      toggleDropDown: !this.state.toggleDropDown
+    });
   }
   render() {
     return (
-      <div>
+      <div
+        style={{ display: 'grid', gridColumn: 1 }}
+        onMouseEnter={this.showDropDown}
+        onMouseLeave={this.showDropDown}
+      >
         <div>
           {this.state.tabNames.map((name, index) => {
             return (
-              <Tab key={index} name={name} showDropDown={this.props.showDrop} />
+              <Tab key={index} name={name} showDropDown={this.showDropDown} />
             );
           })}
         </div>
+        <div>{this.state.toggleDropDown ? <NavDropDown /> : <div />}</div>
       </div>
     );
   }
