@@ -7,7 +7,8 @@ class NavDropDown extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      whichTab: props.name
+      whichTab: props.name,
+      brands: props.brands
     };
   }
   render() {
@@ -16,7 +17,7 @@ class NavDropDown extends React.Component {
     if (this.state.whichTab === 'NEW') {
       navRender = <New />;
     } else if (this.state.whichTab === 'BRANDS') {
-      navRender = <Brands />;
+      navRender = <Brands brands={this.state.brands} />;
     } else {
       navRender = <Gifts />;
     }

@@ -6,14 +6,29 @@ class Search extends React.Component {
     super(props);
     this.state = {
       query: '',
-      previous: ['milk', 'cookies', 'spider-man'],
+      previous: props.searches.filter((search, i) => i < 5),
       toggleDrop: false
     };
     this.showSearches = this.showSearches.bind(this);
+    console.log('this is the searches', props.searches);
   }
   componentDidMount() {
-    //fetch 5 previous searches
-    //use axios to grab them
+    axios
+      .get('/product', { params: {} })
+      .then(({ data }) => {
+        console.log('here is the response', data);
+        this.setState({
+          previous: data
+            .map(search => {
+              return search.search;
+            })
+            .filter((search, i) => i < 5)
+        });
+        console.log('inside app', this.state.previous);
+      })
+      .catch(err => {
+        console.error('Something went wrong', err);
+      });
   }
   showSearches(e) {
     this.setState({

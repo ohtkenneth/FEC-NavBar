@@ -14,19 +14,30 @@ class App extends React.Component {
     super(props);
     this.state = {
       navDropDownToggle: false,
-      navDropName: ''
+      navDropName: '',
+      searches: [],
+      brands: []
     };
     this.showDrop = this.showDrop.bind(this);
     this.hideDrop = this.hideDrop.bind(this);
   }
   componentDidMount() {
     axios
-      .get('/product')
-      .then(res => {
-        console.log('here is the response');
+      .get('/product', { params: {} })
+      .then(({ data }) => {
+        console.log('here is the response', data);
+        this.setState({
+          searches: data.map(search => {
+            return search.search;
+          })
+        });
+        this.setState({
+          brands: data.map(brands => brands.brand)
+        });
+        console.log('inside app', this.state.searches);
       })
       .catch(err => {
-        console.err('Something went wrong', err);
+        console.error('Something went wrong', err);
       });
   }
   showDrop(e, fromTab) {
@@ -49,6 +60,7 @@ class App extends React.Component {
     });
   }
   render() {
+    console.log('in app and these sare the brands', this.state.brands);
     return (
       <div style={{ margin: 'auto', width: '65%' }}>
         <div
@@ -86,7 +98,7 @@ class App extends React.Component {
             alignItems: 'center'
           }}
         >
-          <Search />
+          <Search searches={this.state.searches} />
           <h1 style={{ flexGrow: 2, textAlign: 'center' }}>SEPHORA</h1>
           <Signup />
           <Loves />
@@ -115,6 +127,7 @@ class App extends React.Component {
               name={this.state.navDropName}
               hideDropDown={this.hideDrop}
               showDrop={this.showDrop}
+              brands={this.state.brands}
             />
           ) : (
             <div />
