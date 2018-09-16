@@ -2,11 +2,13 @@ const db = require('./index.js');
 const mongoose = require('mongoose');
 
 var photoSchema = new mongoose.Schema({
-  imageUrl: String,
-  name: String
+  bannerUrl: String,
+  squareAdUrl: String,
+  rectAdUrl: String
 });
 var searchSchema = new mongoose.Schema({
-  search: String
+  search: String,
+  brand: String
 });
 var search = mongoose.model('search', searchSchema);
 var photo = mongoose.model('photo', photoSchema);

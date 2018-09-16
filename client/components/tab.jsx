@@ -16,14 +16,15 @@ class Tab extends React.Component {
     });
   }
   render() {
+    // console.log('inside tab:', this.props.name);
     return (
       <div
         className="tabs"
-        onMouseEnter={() => {
-          props.showDropDown(props.name);
+        onPointerEnter={() => {
+          this.props.showDropDown(this.props.name, true);
           // this.handleNav();
         }}
-        // onMouseLeave={this.handleNav}
+        // onPointerLeave={this.handleNav}
       >
         <div>{this.props.name}</div>
         {/* {this.state.toggleNav ? <NavDropDown /> : <div />} */}

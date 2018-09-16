@@ -7,6 +7,7 @@ import Signup from './signup.jsx';
 import NavDropDown from './navDropDown.jsx';
 import Basket from './Basket.jsx';
 import Loves from './Loves.jsx';
+import axios from 'axios';
 // import bannerimg from '../Images/banner.png';
 class App extends React.Component {
   constructor(props) {
@@ -18,11 +19,29 @@ class App extends React.Component {
     this.showDrop = this.showDrop.bind(this);
     this.hideDrop = this.hideDrop.bind(this);
   }
-  showDrop(e) {
-    console.log(e);
-    this.setState({
-      navDropDownToggle: true
-    });
+  componentDidMount() {
+    axios
+      .get('/product')
+      .then(res => {
+        console.log('here is the response');
+      })
+      .catch(err => {
+        console.err('Something went wrong', err);
+      });
+  }
+  showDrop(e, fromTab) {
+    console.log(e, fromTab);
+    if (fromTab) {
+      this.setState({
+        navDropName: e,
+        navDropDownToggle: true
+      });
+    } else {
+      this.setState({
+        navDropDownToggle: true
+      });
+    }
+    console.log(this.state.navDropName);
   }
   hideDrop(e) {
     this.setState({
@@ -84,22 +103,23 @@ class App extends React.Component {
           <Shop />
           <Tabs showDrop={this.showDrop} hideDrop={this.hideDrop} />
         </div>
-        {/* <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            flexDirection: 'row'
-          }}
+        <div
+        // style={{
+        //   display: 'flex',
+        //   justifyContent: 'center',
+        //   flexDirection: 'row'
+        // }}
         >
           {this.state.navDropDownToggle ? (
             <NavDropDown
               name={this.state.navDropName}
               hideDropDown={this.hideDrop}
+              showDrop={this.showDrop}
             />
           ) : (
             <div />
           )}
-        </div> */}
+        </div>
         <div
           style={{
             display: 'flex',

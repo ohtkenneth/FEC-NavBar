@@ -8,13 +8,12 @@ var CategoryEntry = props => {
         paddingBottom: '1em',
         paddingLeft: '50px',
         paddingRight: '50px',
-        borderStyle: 'solid',
-        borderWidth: '0px 1px 0px 1px',
+
         backgroundColor: 'white',
         zIndex: 999
       }}
       className="categoryEntry"
-      onMouseEnter={e => {
+      onMouseOver={e => {
         props.displayBox(props.name);
       }}
     >

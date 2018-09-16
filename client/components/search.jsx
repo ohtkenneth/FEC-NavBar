@@ -49,7 +49,20 @@ class Search extends React.Component {
             id="search"
           />
           {this.state.toggleDrop ? (
-            <div style={{ position: 'absolute', backgroundColor: 'white' }}>
+            <div
+              style={{
+                position: 'absolute',
+                display: 'block',
+                backgroundColor: 'white',
+                padding: '8px 16px 8px 16px',
+                boxShadow: '0 1px 8px rgba(0,0,0,.15)',
+                lineHeight: '3',
+                marginRight: '8px',
+                width: '12.5%',
+                zIndex: 999
+              }}
+            >
+              <div>Previous Searches</div>
               {this.state.previous.map(search => {
                 return <div>{search}</div>;
               })}

@@ -27,17 +27,19 @@ class Tabs extends React.Component {
     return (
       <div
         style={{ display: 'grid', gridColumn: 1 }}
-        onMouseEnter={this.showDropDown}
-        onMouseLeave={this.showDropDown}
+        // onPointerEnter={this.showDropDown}
+        // onPointerLeave={this.showDropDown}
+        // onPointerEnter={e => this.props.showDrop(e)}
+        onPointerLeave={this.props.hideDrop}
       >
         <div>
           {this.state.tabNames.map((name, index) => {
             return (
-              <Tab key={index} name={name} showDropDown={this.showDropDown} />
+              <Tab key={index} name={name} showDropDown={this.props.showDrop} />
             );
           })}
         </div>
-        <div>{this.state.toggleDropDown ? <NavDropDown /> : <div />}</div>
+        {/* <div>{this.state.toggleDropDown ? <NavDropDown /> : <div />}</div> */}
       </div>
     );
   }

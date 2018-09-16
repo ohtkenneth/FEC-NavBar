@@ -25,6 +25,7 @@ class Shop extends React.Component {
     };
     this.displayBox = this.displayBox.bind(this);
     this.showDropDown = this.showDropDown.bind(this);
+    this.hideBox = this.hideBox.bind(this);
   }
   showDropDown() {
     // console.log('toggle');
@@ -35,54 +36,73 @@ class Shop extends React.Component {
   displayBox(e) {
     console.log('this should activate', e);
     this.setState({
-      display: !this.state.display
+      display: true
+    });
+  }
+  hideBox() {
+    this.setState({
+      display: false
     });
   }
 
   render() {
     return (
-      <span
-        onMouseEnter={e => {
-          this.showDropDown();
-        }}
-        onMouseLeave={this.showDropDown}
-      >
+      <div>
         <div
-          style={{
-            paddingTop: '22px'
+          onMouseEnter={e => {
+            this.showDropDown();
           }}
-          className="shop"
+          onPointerLeave={e => {
+            console.log('mouse left');
+            this.showDropDown();
+            this.hideBox();
+          }}
+          // onPointerLeave={this.hideBox}
         >
-          SHOP
+          <div
+            style={{
+              paddingTop: '22px'
+            }}
+            className="shop"
+          >
+            SHOP
+          </div>
+          <br />
+          <div
+            style={{
+              display: 'flex',
+              position: 'absolute',
+              boxShadow: '0 1px 8px rgba(0,0,0,.15)',
+              flexDirection: 'row-reverse'
+            }}
+            // className="shopDrops"
+          >
+            <span style={{ boxShadow: '0 1px 8px rgba(0,0,0,.15)' }}>
+              {this.state.display && this.state.toggleDrop ? (
+                <SpecificCatEntry />
+              ) : (
+                <div />
+              )}
+            </span>
+            <span style={{ boxShadow: '0 1px 8px rgba(0,0,0,.15)' }}>
+              {this.state.toggleDrop ? (
+                this.state.entries.map((entry, index) => {
+                  return (
+                    <CategoryEntry
+                      key={index}
+                      name={entry}
+                      displayBox={this.displayBox}
+                    />
+                  );
+                })
+              ) : (
+                <div />
+              )}
+            </span>
+          </div>
+          {/* </div> */}
         </div>
-        <br />
-        <div className="shopDrops">
-          <span>
-            {this.state.display && this.state.toggleDrop ? (
-              <SpecificCatEntry />
-            ) : (
-              <div />
-            )}
-          </span>
-          <span>
-            {this.state.toggleDrop ? (
-              this.state.entries.map((entry, index) => {
-                return (
-                  <CategoryEntry
-                    key={index}
-                    name={entry}
-                    toggle={this.showDropDown}
-                    displayBox={this.displayBox}
-                  />
-                );
-              })
-            ) : (
-              <div />
-            )}
-          </span>
-        </div>
-        {/* </div> */}
-      </span>
+      </div>
     );
   }
 }

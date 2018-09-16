@@ -5,10 +5,8 @@ var SpecificCatEntry = props => {
     <div
       style={{
         display: 'flex',
-        borderStyle: 'solid',
         justifyContent: 'space-between',
         padding: '1px 50px 1px 50px',
-        borderWidth: '1px 1px 1px 0px',
         backgroundColor: 'white',
         zIndex: 99
       }}

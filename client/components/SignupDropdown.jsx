@@ -6,7 +6,13 @@ var SignupDropdown = props => {
       // onMouseLeave={props.dropout}
       style={{
         position: 'absolute',
+        display: 'block',
         backgroundColor: 'white',
+        padding: '8px 16px 8px 16px',
+        boxShadow: '0 1px 8px rgba(0,0,0,.15)',
+        marginRight: '8px',
+        // width: '100%',
+
         zIndex: 999
       }}
     >

@@ -19,6 +19,11 @@ class Signup extends React.Component {
       <div
         onMouseEnter={this.handleDropdown}
         onMouseLeave={this.handleDropdown}
+        style={{
+          display: 'block',
+
+          marginRight: '8px'
+        }}
       >
         <h3>Hi, beautiful</h3>
         <div>Sign In or Register</div>
