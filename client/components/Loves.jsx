@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'react-svg-loader!../Images/heart.svg';
 
 class Loves extends React.Component {
   constructor(props) {
@@ -16,8 +17,7 @@ class Loves extends React.Component {
   render() {
     return (
       <div onPointerEnter={this.handleDrop} onPointerLeave={this.handleDrop}>
-        <img />
-        <div>{'<3'}</div>
+        <Image width={45} height={45} />
         <div>
           {this.state.toggleDrop ? (
             <div className="lovesDrop">loves list</div>

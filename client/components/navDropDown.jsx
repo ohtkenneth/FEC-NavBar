@@ -2,6 +2,9 @@ import React from 'react';
 import Brands from './Brands.jsx';
 import New from './New.jsx';
 import Gifts from './Gifts.jsx';
+import Community from './Community';
+import HowTos from './HowTos';
+import StoresLocator from './StoresLocator';
 
 class NavDropDown extends React.Component {
   constructor(props) {
@@ -14,12 +17,18 @@ class NavDropDown extends React.Component {
   render() {
     console.log('inside nav', this.state.whichTab);
     let navRender;
-    if (this.state.whichTab === 'NEW') {
+    if (this.props.name === 'NEW') {
       navRender = <New />;
-    } else if (this.state.whichTab === 'BRANDS') {
+    } else if (this.props.name === 'BRANDS') {
       navRender = <Brands brands={this.state.brands} />;
-    } else {
+    } else if (this.props.name === 'GIFTS') {
       navRender = <Gifts />;
+    } else if (this.props.name === 'COMMUNITY') {
+      navRender = <Community />;
+    } else if (this.props.name === 'HOW-TOS') {
+      navRender = <HowTos />;
+    } else {
+      navRender = <StoresLocator />;
     }
     return (
       <div

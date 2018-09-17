@@ -60,7 +60,6 @@ class App extends React.Component {
     });
   }
   render() {
-    console.log('in app and these sare the brands', this.state.brands);
     return (
       <div style={{ margin: 'auto', width: '65%' }}>
         <div
@@ -115,13 +114,7 @@ class App extends React.Component {
           <Shop />
           <Tabs showDrop={this.showDrop} hideDrop={this.hideDrop} />
         </div>
-        <div
-        // style={{
-        //   display: 'flex',
-        //   justifyContent: 'center',
-        //   flexDirection: 'row'
-        // }}
-        >
+        <div>
           {this.state.navDropDownToggle ? (
             <NavDropDown
               name={this.state.navDropName}

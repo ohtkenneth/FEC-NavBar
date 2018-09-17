@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Image from 'react-svg-loader!../Images/Basket.svg';
 class Basket extends React.Component {
   constructor(props) {
     super(props);
@@ -23,7 +23,7 @@ class Basket extends React.Component {
         onMouseEnter={this.handleDrop}
         onMouseLeave={this.handleDrop}
       >
-        <div>shopping cart</div>
+        <Image height={50} width={50} />
         <div>
           {this.state.toggleDropDown ? (
             <div
