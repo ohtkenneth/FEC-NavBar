@@ -87,15 +87,27 @@ class App extends React.Component {
           }}
         >
           <div style={{ flexGrow: 2 }}>3 Free Samples with every Purchase</div>
-          <span>
+          <span
+            style={{
+              display: 'flex'
+            }}
+          >
             <ImageTruck height={15} width={15} fill={'white'} />
             <div>Track Order</div>
           </span>
-          <span>
+          <span
+            style={{
+              display: 'flex'
+            }}
+          >
             <ImageLocator height={15} width={15} fill={'white'} />
             <div>Find a Store</div>
           </span>
-          <span>
+          <span
+            style={{
+              display: 'flex'
+            }}
+          >
             <USA height={15} width={15} />
             <div>Country</div>
           </span>

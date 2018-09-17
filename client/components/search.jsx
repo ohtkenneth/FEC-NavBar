@@ -32,6 +32,9 @@ class Search extends React.Component {
         console.error('Something went wrong', err);
       });
   }
+  // postSearch(e) {
+  //   axios.post('/product',)
+  // }
   showSearches(e) {
     this.setState({
       toggleDrop: !this.state.toggleDrop

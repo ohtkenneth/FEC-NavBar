@@ -1,10 +1,10 @@
 import React from 'react';
-import Brands from './Brands.jsx';
-import New from './New.jsx';
-import Gifts from './Gifts.jsx';
-import Community from './Community';
-import HowTos from './HowTos';
-import StoresLocator from './StoresLocator';
+import Brands from './NavDropDown/Brands.jsx';
+import New from './NavDropDown/New.jsx';
+import Gifts from './NavDropDown/Gifts.jsx';
+import Community from './NavDropDown/Community.jsx';
+import HowTos from './NavDropDown/HowTos.jsx';
+import StoresLocator from './NavDropDown/StoresLocator.jsx';
 
 class NavDropDown extends React.Component {
   constructor(props) {

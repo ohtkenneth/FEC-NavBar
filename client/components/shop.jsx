@@ -1,6 +1,6 @@
 import React from 'react';
-import CategoryEntry from './categoryentry.jsx';
-import SpecificCatEntry from './specificCatEntry.jsx';
+import CategoryEntry from './ShopDropDowns/categoryentry.jsx';
+import SpecificCatEntry from './ShopDropDowns/specificCatEntry.jsx';
 
 class Shop extends React.Component {
   constructor(props) {
