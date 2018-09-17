@@ -8,6 +8,9 @@ import NavDropDown from './navDropDown.jsx';
 import Basket from './Basket.jsx';
 import Loves from './Loves.jsx';
 import axios from 'axios';
+import ImageTruck from 'react-svg-loader!../Images/Truck.svg';
+import ImageLocator from 'react-svg-loader!../Images/Locator.svg';
+import USA from 'react-svg-loader!../Images/USA.svg';
 // import bannerimg from '../Images/banner.png';
 class App extends React.Component {
   constructor(props) {
@@ -84,10 +87,18 @@ class App extends React.Component {
           }}
         >
           <div style={{ flexGrow: 2 }}>3 Free Samples with every Purchase</div>
-          <div>Reorder</div>
-          <div>Track Order</div>
-          <div>Find a Store</div>
-          <div>Country</div>
+          <span>
+            <ImageTruck height={15} width={15} fill={'white'} />
+            <div>Track Order</div>
+          </span>
+          <span>
+            <ImageLocator height={15} width={15} fill={'white'} />
+            <div>Find a Store</div>
+          </span>
+          <span>
+            <USA height={15} width={15} />
+            <div>Country</div>
+          </span>
         </div>
         <div
           style={{
