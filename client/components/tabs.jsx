@@ -32,7 +32,12 @@ class Tabs extends React.Component {
       // onPointerEnter={e => this.props.showDrop(e)}
       // onPointerLeave={this.props.hideDrop}
       >
-        <div>
+        <div
+          style={{
+            display: 'flex',
+            flex: '0 0 auto'
+          }}
+        >
           {this.state.tabNames.map((name, index) => {
             return (
               <Tab
