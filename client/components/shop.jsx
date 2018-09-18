@@ -1,7 +1,15 @@
 import React from 'react';
 import CategoryEntry from './ShopDropDowns/categoryentry.jsx';
 import SpecificCatEntry from './ShopDropDowns/specificCatEntry.jsx';
-
+import styled from 'styled-components';
+const StyledShop = styled.div`
+  height: 38px;
+  padding: 22px 28px 0px 28px;
+  z-index: 3000;
+  &:hover {
+    box-shadow: grey 0px 1px 8px;
+  }
+`;
 class Shop extends React.Component {
   constructor(props) {
     super(props);
@@ -48,7 +56,7 @@ class Shop extends React.Component {
   render() {
     return (
       <div>
-        <div
+        <StyledShop
           onMouseEnter={e => {
             this.showDropDown();
           }}
@@ -57,13 +65,19 @@ class Shop extends React.Component {
             this.showDropDown();
             this.hideBox();
           }}
+          // style={{
+          //   height: '38px',
+          //   padding: '22px 28px 0px 28px',
+          //   boxShadow: '0 1px 8px rgba(0,0,0,.15)',
+          //   zIndex: 3000
+          // }}
           // onPointerLeave={this.hideBox}
         >
           <div
             style={{
               height: '38px',
-              padding: '22px 28px 0px 28px',
-              boxShadow: '0 1px 8px rgba(0,0,0,.15)',
+              // padding: '22px 28px 0px 28px',
+              // boxShadow: '0 1px 8px rgba(0,0,0,.15)',
               zIndex: 3000
             }}
             className="shop"
@@ -74,6 +88,7 @@ class Shop extends React.Component {
           <div
             style={{
               display: 'flex',
+              left: '17.8%',
               position: 'absolute',
               flexDirection: 'row',
               backgroundColor: 'white',
@@ -117,7 +132,7 @@ class Shop extends React.Component {
             </span>
           </div>
           {/* </div> */}
-        </div>
+        </StyledShop>
       </div>
     );
   }

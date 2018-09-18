@@ -47,7 +47,7 @@ class NavDropDown extends React.Component {
         //   border: 'solid'
         // }}
         className="NavDropDown"
-        onPointerEnter={this.props.showDrop}
+        onPointerEnter={e => this.props.showDrop(this.props.name)}
         onPointerLeave={this.props.hideDropDown}
       >
         <div

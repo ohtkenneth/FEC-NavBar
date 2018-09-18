@@ -40,6 +40,7 @@ class Tabs extends React.Component {
                 name={name}
                 showDropDown={this.props.showDrop}
                 hideDropDown={this.props.hideDrop}
+                selected={this.props.selected}
               />
             );
           })}

@@ -12,6 +12,7 @@ import ImageTruck from 'react-svg-loader!../Images/Truck.svg';
 import ImageLocator from 'react-svg-loader!../Images/Locator.svg';
 import USA from 'react-svg-loader!../Images/USA.svg';
 import Country from './Country.jsx';
+import styled from 'styled-components';
 // import bannerimg from '../Images/banner.png';
 class App extends React.Component {
   constructor(props) {
@@ -45,22 +46,15 @@ class App extends React.Component {
         console.error('Something went wrong', err);
       });
   }
-  showDrop(e, fromTab) {
-    console.log(e, fromTab);
-    if (fromTab) {
-      this.setState({
-        navDropName: e,
-        navDropDownToggle: true
-      });
-    } else {
-      this.setState({
-        navDropDownToggle: true
-      });
-    }
-    console.log(this.state.navDropName);
+  showDrop(e) {
+    this.setState({
+      navDropName: e,
+      navDropDownToggle: true
+    });
   }
   hideDrop(e) {
     this.setState({
+      navDropName: '',
       navDropDownToggle: false
     });
   }
@@ -134,7 +128,11 @@ class App extends React.Component {
           }}
         >
           <Shop />
-          <Tabs showDrop={this.showDrop} hideDrop={this.hideDrop} />
+          <Tabs
+            showDrop={this.showDrop}
+            hideDrop={this.hideDrop}
+            selected={this.state.navDropName}
+          />
         </span>
         <div style={{ zIndex: 3000 }}>
           {this.state.navDropDownToggle ? (

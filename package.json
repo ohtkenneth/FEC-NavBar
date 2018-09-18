@@ -1,19 +1,29 @@
 {
   "name": "sephoranavbar",
   "version": "1.0.0",
-  "description": "",
+  "description": "Clone of Sephora's Navigation Bar",
   "main": "server/index.js",
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ],
+    "plugins": [
+      "styled-components"
+    ]
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --w",
     "start": "nodemon ./server"
   },
-  "author": "",
+  "author": "Drew",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
+    "babel-plugin-styled-components": "^1.7.1",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "body-parser": "^1.18.3",
