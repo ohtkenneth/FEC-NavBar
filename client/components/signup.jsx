@@ -1,6 +1,5 @@
 import React from 'react';
 import SignupDropdown from './SignupDropdown.jsx';
-
 class Signup extends React.Component {
   constructor(props) {
     super(props);
@@ -21,12 +20,40 @@ class Signup extends React.Component {
         onMouseLeave={this.handleDropdown}
         style={{
           display: 'block',
-
-          marginRight: '8px'
+          position: 'relative',
+          marginRight: '8px',
+          padding: '8px 20px 8px 20px'
         }}
       >
-        <h3>Hi, beautiful</h3>
-        <div>Sign In or Register</div>
+        <span style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <span>
+            <h3>Hi, beautiful</h3>
+            <div style={{ fontSize: 12 }}>Sign In or Register</div>
+          </span>
+          {this.state.dropdown ? (
+            <span
+              style={{
+                alignSelf: 'center',
+                width: 0,
+                height: 0,
+                borderLeft: '5px solid transparent',
+                borderRight: '5px solid transparent',
+                borderBottom: '5px solid black'
+              }}
+            />
+          ) : (
+            <span
+              style={{
+                alignSelf: 'center',
+                width: 0,
+                height: 0,
+                borderLeft: '5px solid transparent',
+                borderRight: '5px solid transparent',
+                borderTop: '5px solid black'
+              }}
+            />
+          )}
+        </span>
         {this.state.dropdown ? (
           <SignupDropdown dropout={this.handleDropout} />
         ) : (

@@ -1,6 +1,7 @@
 import React from 'react';
-
-import NavDropDown from './navDropDown';
+import CssModules from 'react-css-modules';
+// import NavDropDown from './navDropDown';
+// import styles from './styles.css';
 
 class Tab extends React.Component {
   constructor(props) {
@@ -24,6 +25,7 @@ class Tab extends React.Component {
           this.props.showDropDown(this.props.name, true);
           // this.handleNav();
         }}
+        onPointerLeave={this.props.hideDropDown}
         // onPointerLeave={this.handleNav}
       >
         <div>{this.props.name}</div>

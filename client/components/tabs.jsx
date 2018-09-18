@@ -1,6 +1,6 @@
 import React from 'react';
 import Tab from './tab.jsx';
-import NavDropDown from './navDropDown';
+// import NavDropDown from './navDropDown';
 class Tabs extends React.Component {
   constructor(props) {
     super(props);
@@ -26,16 +26,21 @@ class Tabs extends React.Component {
   render() {
     return (
       <div
-        style={{ display: 'grid', gridColumn: 1 }}
-        // onPointerEnter={this.showDropDown}
-        // onPointerLeave={this.showDropDown}
-        // onPointerEnter={e => this.props.showDrop(e)}
-        onPointerLeave={this.props.hideDrop}
+      // style={{ display: 'grid', gridColumn: 1 }}
+      // onPointerEnter={this.showDropDown}
+      // onPointerLeave={this.showDropDown}
+      // onPointerEnter={e => this.props.showDrop(e)}
+      // onPointerLeave={this.props.hideDrop}
       >
         <div>
           {this.state.tabNames.map((name, index) => {
             return (
-              <Tab key={index} name={name} showDropDown={this.props.showDrop} />
+              <Tab
+                key={index}
+                name={name}
+                showDropDown={this.props.showDrop}
+                hideDropDown={this.props.hideDrop}
+              />
             );
           })}
         </div>

@@ -8,7 +8,7 @@ var SpecificCatEntry = props => {
         justifyContent: 'space-between',
         padding: '1px 50px 1px 50px',
         backgroundColor: 'white',
-        zIndex: 99
+        zIndex: 99999
       }}
     >
       <div>

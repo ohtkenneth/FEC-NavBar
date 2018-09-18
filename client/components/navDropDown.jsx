@@ -32,6 +32,7 @@ class NavDropDown extends React.Component {
     }
     return (
       <div
+        style={{ zIndex: 3000 }}
         // style={{
         //   position: 'absolute',
         //   // left: 0,

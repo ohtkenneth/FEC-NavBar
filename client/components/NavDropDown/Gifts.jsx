@@ -25,13 +25,27 @@ const Gifts = props => {
           paddingLeft: '2em'
         }}
       >
-        <h4>Gift Cards</h4>
-        <h4>Gift Finder</h4>
-        <h4>View All Gifts</h4>
-        <h4>Mini Size</h4>
-        <h4>Value Sets</h4>
-        <h4>By Price</h4>
-        <div>$10 and Under</div>
+        <h4>
+          <a href="/product">Gift Cards</a>
+        </h4>
+        <h4>
+          <a href="/product">Gift Finder</a>
+        </h4>
+        <h4>
+          <a href="/product">View All Gifts</a>
+        </h4>
+        <h4>
+          <a href="/product">Mini Size</a>
+        </h4>
+        <h4>
+          <a href="/product">Value Sets</a>
+        </h4>
+        <h4>
+          <a href="/product">By Price</a>
+        </h4>
+        <div>
+          <a href="https://www.w3schools.com/images/">$10 and Under</a>
+        </div>
         <div>$25 and Under</div>
         <div>$50 and Under</div>
         <div>$75 and Under</div>

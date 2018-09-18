@@ -17,7 +17,7 @@ class Loves extends React.Component {
   render() {
     return (
       <div onPointerEnter={this.handleDrop} onPointerLeave={this.handleDrop}>
-        <Image width={45} height={45} />
+        <Image width={30} height={30} />
         <div>
           {this.state.toggleDrop ? (
             <div className="lovesDrop">loves list</div>

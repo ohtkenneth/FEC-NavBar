@@ -1,6 +1,6 @@
 import React from 'react';
 import Search from './search.jsx';
-import Banner from './banner.jsx';
+// import Banner from './banner.jsx';
 import Shop from './shop.jsx';
 import Tabs from './tabs.jsx';
 import Signup from './signup.jsx';
@@ -11,6 +11,7 @@ import axios from 'axios';
 import ImageTruck from 'react-svg-loader!../Images/Truck.svg';
 import ImageLocator from 'react-svg-loader!../Images/Locator.svg';
 import USA from 'react-svg-loader!../Images/USA.svg';
+import Country from './Country.jsx';
 // import bannerimg from '../Images/banner.png';
 class App extends React.Component {
   constructor(props) {
@@ -19,7 +20,8 @@ class App extends React.Component {
       navDropDownToggle: false,
       navDropName: '',
       searches: [],
-      brands: []
+      brands: [],
+      country: 'US'
     };
     this.showDrop = this.showDrop.bind(this);
     this.hideDrop = this.hideDrop.bind(this);
@@ -75,7 +77,7 @@ class App extends React.Component {
           <img src="https://www.sephora.com/contentimages/homepage/090418/Homepage/DesktopMweb/2018-09-04-hp-persistent-banner-labor-day-us-slice.jpg" />
         </div>
         {/* blackbar */}
-        <div
+        <span
           style={{
             display: 'flex',
             justifyContent: 'center',
@@ -103,16 +105,9 @@ class App extends React.Component {
             <ImageLocator height={15} width={15} fill={'white'} />
             <div>Find a Store</div>
           </span>
-          <span
-            style={{
-              display: 'flex'
-            }}
-          >
-            <USA height={15} width={15} />
-            <div>Country</div>
-          </span>
-        </div>
-        <div
+          <Country country={this.state.country} />
+        </span>
+        <span
           style={{
             display: 'flex',
             justifyContent: 'space-between',
@@ -123,21 +118,25 @@ class App extends React.Component {
           <Search searches={this.state.searches} />
           <h1 style={{ flexGrow: 2, textAlign: 'center' }}>SEPHORA</h1>
           <Signup />
-          <Loves />
-          <Basket />
-        </div>
-        <div
+          <div>
+            <Loves />
+          </div>
+          <div>
+            <Basket />
+          </div>
+        </span>
+        <span
           className="bottomBar"
           style={{
             display: 'flex',
-            justifyContent: 'center',
+            justifyContent: 'spaceBetween',
             flexDirection: 'row'
           }}
         >
           <Shop />
           <Tabs showDrop={this.showDrop} hideDrop={this.hideDrop} />
-        </div>
-        <div>
+        </span>
+        <div style={{ zIndex: 3000 }}>
           {this.state.navDropDownToggle ? (
             <NavDropDown
               name={this.state.navDropName}
@@ -156,8 +155,7 @@ class App extends React.Component {
             backgroundColor: 'black',
             color: 'white',
             fontFamily: 'Helvetica',
-            padding: '4px 0px 4px 0px',
-            zIndex: '0'
+            padding: '4px 0px 4px 0px'
           }}
         >
           <a

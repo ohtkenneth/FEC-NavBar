@@ -1,5 +1,7 @@
 import React from 'react';
 import Image from 'react-svg-loader!../Images/Basket.svg';
+
+import style from '../styles/Signup.css';
 class Basket extends React.Component {
   constructor(props) {
     super(props);
@@ -23,28 +25,38 @@ class Basket extends React.Component {
         onMouseEnter={this.handleDrop}
         onMouseLeave={this.handleDrop}
       >
-        <Image height={50} width={50} />
         <div>
-          {this.state.toggleDropDown ? (
-            <div
-              style={{
-                position: 'absolute',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                backgroundColor: 'white',
-                zIndex: 999
-              }}
-            >
-              <div>Your basket is empty</div>
-              <p>Sign in to see items you mayt have added previously.</p>
-              <button>SIGN IN</button>
-              <p>See samples, rewards and promotions in </p>
-              <a>basket</a>
-            </div>
-          ) : (
-            <div />
-          )}
+          <Image height={30} width={30} />
+
+          <div>
+            {this.state.toggleDropDown ? (
+              <div
+                style={{
+                  position: 'absolute',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  width: '400px',
+                  right: '17.5%',
+                  // top: '100%',
+                  justifyContent: 'center',
+                  backgroundColor: 'white',
+                  wordWrap: 'normal',
+
+                  zIndex: 1030
+                }}
+              >
+                <div>Your basket is empty</div>
+                <div style={{ display: 'flex' }}>
+                  <p>Sign in to see items you may have added previously.</p>
+                  <button className={style.button}>SIGN IN</button>
+                </div>
+                <p>See samples, rewards and promotions in </p>
+                <a>basket</a>
+              </div>
+            ) : (
+              <div />
+            )}
+          </div>
         </div>
       </div>
     );

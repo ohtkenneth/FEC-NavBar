@@ -61,30 +61,33 @@ class Shop extends React.Component {
         >
           <div
             style={{
-              paddingTop: '22px'
+              height: '38px',
+              padding: '22px 28px 0px 28px',
+              boxShadow: '0 1px 8px rgba(0,0,0,.15)',
+              zIndex: 3000
             }}
             className="shop"
           >
             SHOP
           </div>
-          <br />
+
           <div
             style={{
               display: 'flex',
               position: 'absolute',
-              boxShadow: '0 1px 8px rgba(0,0,0,.15)',
-              flexDirection: 'row-reverse'
+              flexDirection: 'row',
+              backgroundColor: 'white',
+              zIndex: 3000
             }}
             // className="shopDrops"
           >
-            <span style={{ boxShadow: '0 1px 8px rgba(0,0,0,.15)' }}>
-              {this.state.display && this.state.toggleDrop ? (
-                <SpecificCatEntry />
-              ) : (
-                <div />
-              )}
-            </span>
-            <span style={{ boxShadow: '0 1px 8px rgba(0,0,0,.15)' }}>
+            <span
+              style={{
+                boxShadow: '0 1px 8px rgba(0,0,0,.15)',
+                paddingTop: '22px'
+                // zIndex: 1130
+              }}
+            >
               {this.state.toggleDrop ? (
                 this.state.entries.map((entry, index) => {
                   return (
@@ -95,6 +98,19 @@ class Shop extends React.Component {
                     />
                   );
                 })
+              ) : (
+                <div />
+              )}
+            </span>
+            <span
+              style={{
+                boxShadow: '0 1px 8px rgba(0,0,0,.15)',
+                paddingTop: '22px'
+                // zIndex: 1130
+              }}
+            >
+              {this.state.display && this.state.toggleDrop ? (
+                <SpecificCatEntry />
               ) : (
                 <div />
               )}
