@@ -13,7 +13,19 @@ import ImageLocator from 'react-svg-loader!../Images/Locator.svg';
 import USA from 'react-svg-loader!../Images/USA.svg';
 import Country from './Country.jsx';
 import styled from 'styled-components';
+import AppStyled from '../styles.js';
 // import bannerimg from '../Images/banner.png';
+// const AppStyled = styled.div`
+//   a {
+//     color: black;
+//     text-decoration: none;
+//   }
+//   .bottomBar {
+//     display: flex;
+//     justify-content: space-between;
+//     flex-direction: row;
+//   }}
+// `;
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -29,7 +41,7 @@ class App extends React.Component {
   }
   componentDidMount() {
     axios
-      .get('/product', { params: {} })
+      .get('https:localhost:1337/product', { params: {} })
       .then(({ data }) => {
         console.log('here is the response', data);
         this.setState({
@@ -60,7 +72,9 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div style={{ margin: 'auto', width: '65%' }}>
+      <AppStyled
+        style={{ margin: 'auto', width: '980px', fontFamily: 'helvetica' }}
+      >
         <div
           style={{
             display: 'flex',
@@ -119,14 +133,7 @@ class App extends React.Component {
             <Basket />
           </div>
         </span>
-        <span
-          className="bottomBar"
-          style={{
-            display: 'flex',
-            justifyContent: 'spaceBetween',
-            flexDirection: 'row'
-          }}
-        >
+        <span className="bottomBar">
           <Shop />
           <Tabs
             showDrop={this.showDrop}
@@ -167,7 +174,7 @@ class App extends React.Component {
             SUBSCRIBE NOW >
           </a>
         </div>
-      </div>
+      </AppStyled>
     );
   }
 }
