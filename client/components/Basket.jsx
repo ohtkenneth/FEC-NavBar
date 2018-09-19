@@ -28,7 +28,14 @@ class Basket extends React.Component {
         <div>
           <Image height={30} width={30} />
 
-          <div>
+          <div
+            style={{
+              marginRight: '1200px',
+              marginLeft: '30px',
+              position: 'absolute'
+              // top: 0
+            }}
+          >
             {this.state.toggleDropDown ? (
               <div
                 style={{
@@ -36,12 +43,14 @@ class Basket extends React.Component {
                   display: 'flex',
                   flexDirection: 'column',
                   width: '400px',
-                  right: '17.5%',
-                  // top: '100%',
+                  top: 0,
+                  right: 0,
+                  // marginRight: '125px',
+                  // marginLeft: '-125px',
                   justifyContent: 'center',
                   backgroundColor: 'white',
                   wordWrap: 'normal',
-
+                  boxShadow: '0 1px 8px rgba(0,0,0,.15)',
                   zIndex: 1030
                 }}
               >

@@ -10,6 +10,7 @@ var SignupDropdown = props => {
         padding: '8px 20px 8px 20px',
         boxShadow: '0 1px 8px rgba(0,0,0,.15)',
         marginRight: '8px',
+        width: 145,
         marginBottom: '2em',
         lineHeight: '1.5em',
         fontSize: 12,

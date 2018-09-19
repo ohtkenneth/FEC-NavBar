@@ -22,6 +22,7 @@ class Signup extends React.Component {
           display: 'block',
           position: 'relative',
           marginRight: '8px',
+          width: '180px',
           padding: '8px 20px 8px 20px'
         }}
       >

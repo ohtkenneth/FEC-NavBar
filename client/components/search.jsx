@@ -78,7 +78,7 @@ class Search extends React.Component {
                 boxShadow: '0 1px 8px rgba(0,0,0,.15)',
                 lineHeight: '3',
                 marginRight: '8px',
-                width: '12.5%',
+                width: '195px',
                 zIndex: 999
               }}
             >
