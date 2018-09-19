@@ -16,7 +16,7 @@ class Search extends React.Component {
   }
   componentDidMount() {
     axios
-      .get('https:localhost:1337/product', { params: {} })
+      .get('/product', { params: {} })
       .then(({ data }) => {
         console.log('here is the response', data);
         this.setState({

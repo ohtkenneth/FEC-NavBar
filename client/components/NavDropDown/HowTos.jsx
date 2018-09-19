@@ -20,12 +20,16 @@ const HowTos = props => {
         <h4>Quizzes</h4>
         <div>
           {quizzes.map(quiz => (
-            <div>{quiz}</div>
+            <div>
+              <a href="/product">{quiz}</a>
+            </div>
           ))}
         </div>
         <h4>Buying Guides</h4>
         {guides.map(guide => (
-          <div>{guide}</div>
+          <div>
+            <a href="/product">{guide}</a>
+          </div>
         ))}
       </div>
       <img src="https://www.sephora.com/contentimages/meganav/large/2018-09-13-hp-slide-charlotte-tilbury-us-ca-m-slice.jpg" />

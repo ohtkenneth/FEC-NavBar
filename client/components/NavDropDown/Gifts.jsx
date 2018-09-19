@@ -24,16 +24,22 @@ const Gifts = props => {
         <h4>
           <a href="/product">Value Sets</a>
         </h4>
-        <h4>
-          <a href="/product">By Price</a>
-        </h4>
+        <h4>By Price</h4>
         <div>
           <a href="https://www.w3schools.com/images/">$10 and Under</a>
         </div>
-        <div>$25 and Under</div>
-        <div>$50 and Under</div>
-        <div>$75 and Under</div>
-        <div>$100 and Under</div>
+        <div>
+          <a href="/product">$25 and Under</a>
+        </div>
+        <div>
+          <a href="/product">$50 and Under</a>
+        </div>
+        <div>
+          <a href="/product">$75 and Under</a>
+        </div>
+        <div>
+          <a href="/product">$100 and Under</a>
+        </div>
       </div>
       <div
         style={{
@@ -42,12 +48,24 @@ const Gifts = props => {
         }}
       >
         <h4>By Category</h4>
-        <div>Makeup</div>
-        <div>Skincare</div>
-        <div>Fragrance</div>
-        <div>Bath {'&'} Body</div>
-        <div>Candles {'&'} Home Scents</div>
-        <div>Men</div>
+        <div>
+          <a href="/product">Makeup</a>
+        </div>
+        <div>
+          <a href="/product">Skincare</a>
+        </div>
+        <div>
+          <a href="/product">Fragrance</a>
+        </div>
+        <div>
+          <a href="/product">Bath {'&'} Body</a>
+        </div>
+        <div>
+          <a href="/product">Candles {'&'} Home Scents</a>
+        </div>
+        <div>
+          <a href="/product">Men</a>
+        </div>
       </div>
       <img src="https://www.sephora.com/contentimages/homepage/042418/Meganav/2018-04-19-meganav-lg-button-gift-finder-evergreen-slice.jpg" />
       <div

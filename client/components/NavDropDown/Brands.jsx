@@ -2,7 +2,9 @@ import React from 'react';
 
 const Brands = props => {
   let newBrand = props.brands.filter((brand, index) => index < 5);
-  let featured = props.brands.filter((brand, index) => index > 5 && index < 10);
+  let featured = props.brands.filter(
+    (brand, index) => index >= 5 && index < 10
+  );
   return (
     <div className="NavDrops">
       <div
@@ -11,17 +13,25 @@ const Brands = props => {
           paddingLeft: '2em'
         }}
       >
-        <h4>Brands A-Z</h4>
-        <h4>Sephora Collection</h4>
+        <h4>
+          <a href="/product">Brands A-Z</a>
+        </h4>
+        <h4>
+          <a href="/product">Sephora Collection</a>
+        </h4>
         <h4>New Brands</h4>
         <div>
           {newBrand.map(brand => (
-            <div>{brand}</div>
+            <div>
+              <a href="/product">{brand}</a>
+            </div>
           ))}
         </div>
         <h4>Featured Brands</h4>
         {featured.map(brand => (
-          <div>{brand}</div>
+          <div>
+            <a href="/product">{brand}</a>
+          </div>
         ))}
       </div>
       <img src="https://www.sephora.com/contentimages/meganav/large/2018-09-13-hp-slide-charlotte-tilbury-us-ca-m-slice.jpg" />
