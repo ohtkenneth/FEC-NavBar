@@ -2,23 +2,7 @@ import React from 'react';
 
 const Gifts = props => {
   return (
-    <div
-      style={{
-        position: 'absolute',
-        // left: 0,
-        // right: 0,
-        width: '65%',
-        margin: 'auto',
-        // marginLeft: '-50px',
-        // top: '50%',
-        // marginTop: '-50px',
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        backgroundColor: 'white',
-        boxShadow: '0 1px 8px rgba(0,0,0,.15)'
-      }}
-    >
+    <div className="NavDrops">
       <div
         style={{
           flexGrow: 1.2,

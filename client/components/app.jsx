@@ -128,7 +128,7 @@ class App extends React.Component {
             selected={this.state.navDropName}
           />
         </span>
-        <div style={{ zIndex: 3000 }}>
+        <div style={{ zIndex: 3005 }}>
           {this.state.navDropDownToggle ? (
             <NavDropDown
               name={this.state.navDropName}

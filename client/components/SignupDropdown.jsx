@@ -3,7 +3,6 @@ import React from 'react';
 var SignupDropdown = props => {
   return (
     <div
-      // onMouseLeave={props.dropout}
       style={{
         position: 'absolute',
         display: 'block',
@@ -14,8 +13,6 @@ var SignupDropdown = props => {
         marginBottom: '2em',
         lineHeight: '1.5em',
         fontSize: 12,
-        // width: '100%',
-
         zIndex: 999
       }}
     >

@@ -10,7 +10,7 @@ const StyledNav = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  z-index: 3000;
+  z-index: 99999;
 `;
 class NavDropDown extends React.Component {
   constructor(props) {
@@ -43,7 +43,8 @@ class NavDropDown extends React.Component {
       >
         <div
           style={{
-            width: '300px'
+            width: '300px',
+            zIndex: 99999
           }}
         >
           {navRender}

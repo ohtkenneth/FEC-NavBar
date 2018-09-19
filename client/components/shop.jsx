@@ -65,42 +65,31 @@ class Shop extends React.Component {
             this.showDropDown();
             this.hideBox();
           }}
-          // style={{
-          //   height: '38px',
-          //   padding: '22px 28px 0px 28px',
-          //   boxShadow: '0 1px 8px rgba(0,0,0,.15)',
-          //   zIndex: 3000
-          // }}
-          // onPointerLeave={this.hideBox}
         >
           <div
             style={{
               height: '38px',
-              // padding: '22px 28px 0px 28px',
-              // boxShadow: '0 1px 8px rgba(0,0,0,.15)',
               zIndex: 3000
             }}
             className="shop"
           >
             SHOP
           </div>
-
           <div
             style={{
               display: 'flex',
-              left: '17.8%',
               position: 'absolute',
+              marginLeft: '-28px',
+              marginRight: '28px',
               flexDirection: 'row',
               backgroundColor: 'white',
               zIndex: 3000
             }}
-            // className="shopDrops"
           >
             <span
               style={{
                 boxShadow: '0 1px 8px rgba(0,0,0,.15)',
                 paddingTop: '22px'
-                // zIndex: 1130
               }}
             >
               {this.state.toggleDrop ? (
@@ -131,7 +120,6 @@ class Shop extends React.Component {
               )}
             </span>
           </div>
-          {/* </div> */}
         </StyledShop>
       </div>
     );

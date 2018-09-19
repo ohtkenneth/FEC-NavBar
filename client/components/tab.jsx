@@ -19,15 +19,7 @@ const TabDiv = styled.div`
   letter-spacing: 0.0625em;
   text-align: justify;
   &:hover {
-    /* border-style: solid;
-        border-width: 1px 1px 0px 1px; */
-    /* padding-top: 1em; */
     box-shadow: grey 0px 1px 8px;
-    /* vertical-align: 1em; */
-    /* align-content: 1em; */
-    /* box-align: end; */
-    /* margin-bottom: 0px; */
-    /* box-direction: reverse; */
   }
 `;
 class Tab extends React.Component {
@@ -52,16 +44,12 @@ class Tab extends React.Component {
           boxShadow:
             this.props.name === this.props.selected ? 'grey 0px 1px 8px' : ''
         }}
-        // className="tabs"
         onPointerEnter={() => {
           this.props.showDropDown(this.props.name, true);
-          // this.handleNav();
         }}
         onPointerLeave={this.props.hideDropDown}
-        // onPointerLeave={this.handleNav}
       >
         <div>{this.props.name}</div>
-        {/* {this.state.toggleNav ? <NavDropDown /> : <div />} */}
       </TabDiv>
     );
   }
