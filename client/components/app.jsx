@@ -10,22 +10,9 @@ import Loves from './Loves.jsx';
 import axios from 'axios';
 import ImageTruck from 'react-svg-loader!../Images/Truck.svg';
 import ImageLocator from 'react-svg-loader!../Images/Locator.svg';
-import USA from 'react-svg-loader!../Images/USA.svg';
 import Country from './Country.jsx';
-import styled from 'styled-components';
 import AppStyled from '../styles.js';
-// import bannerimg from '../Images/banner.png';
-// const AppStyled = styled.div`
-//   a {
-//     color: black;
-//     text-decoration: none;
-//   }
-//   .bottomBar {
-//     display: flex;
-//     justify-content: space-between;
-//     flex-direction: row;
-//   }}
-// `;
+
 class App extends React.Component {
   constructor(props) {
     super(props);
