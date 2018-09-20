@@ -1,13 +1,6 @@
 import React from 'react';
 import SignupDropdown from './SignupDropdown.jsx';
-import styled from 'styled-components';
-const StyledSignup = styled.div`
-  display: block;
-  position: relative;
-  marginright: 8px;
-  width: 180px;
-  padding: 8px 20px 8px 20px;
-`;
+
 class Signup extends React.Component {
   constructor(props) {
     super(props);
@@ -23,7 +16,8 @@ class Signup extends React.Component {
   }
   render() {
     return (
-      <StyledSignup
+      <div
+        className="StyledSignup"
         onMouseEnter={this.handleDropdown}
         onMouseLeave={this.handleDropdown}
       >
@@ -43,7 +37,7 @@ class Signup extends React.Component {
         ) : (
           <div />
         )}
-      </StyledSignup>
+      </div>
     );
   }
 }

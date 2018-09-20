@@ -5,13 +5,7 @@ import Gifts from './NavDropDown/Gifts.jsx';
 import Community from './NavDropDown/Community.jsx';
 import HowTos from './NavDropDown/HowTos.jsx';
 import StoresLocator from './NavDropDown/StoresLocator.jsx';
-import styled from 'styled-components';
-const StyledNav = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  z-index: 99999;
-`;
+
 class NavDropDown extends React.Component {
   constructor(props) {
     super(props);
@@ -36,12 +30,13 @@ class NavDropDown extends React.Component {
       navRender = <StoresLocator />;
     }
     return (
-      <StyledNav
+      <div
+        className="StyledNav"
         onPointerEnter={e => this.props.showDrop(this.props.name)}
         onPointerLeave={this.props.hideDropDown}
       >
         <div>{navRender}</div>
-      </StyledNav>
+      </div>
     );
   }
 }

@@ -14,15 +14,15 @@ const HowTos = props => {
       <div className="navs-text">
         <h4>Quizzes</h4>
         <div>
-          {quizzes.map(quiz => (
-            <div>
+          {quizzes.map((quiz, i) => (
+            <div key={i}>
               <a href="/product">{quiz}</a>
             </div>
           ))}
         </div>
         <h4>Buying Guides</h4>
-        {guides.map(guide => (
-          <div>
+        {guides.map((guide, i) => (
+          <div key={i}>
             <a href="/product">{guide}</a>
           </div>
         ))}

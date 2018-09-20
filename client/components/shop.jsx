@@ -1,23 +1,7 @@
 import React from 'react';
 import CategoryEntry from './ShopDropDowns/categoryentry.jsx';
 import SpecificCatEntry from './ShopDropDowns/specificCatEntry.jsx';
-import styled from 'styled-components';
-const StyledShop = styled.div`
-  height: 38px;
-  padding: 22px 28px 0px 28px;
-  z-index: 3000;
-  &:hover {
-    box-shadow: grey 0px 1px 8px;
-  }
-`;
-const ShopBoxStyled = styled.div`
-  height: 38px;
-  z-index: 3000;
-`;
-const StyledBoxDrop = styled.div`
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.15);
-  padding-top: 22px;
-`;
+
 class Shop extends React.Component {
   constructor(props) {
     super(props);
@@ -64,7 +48,8 @@ class Shop extends React.Component {
   render() {
     return (
       <div>
-        <StyledShop
+        <div
+          className="shops"
           onMouseEnter={e => {
             this.showDropDown();
           }}
@@ -74,19 +59,9 @@ class Shop extends React.Component {
             this.hideBox();
           }}
         >
-          <ShopBoxStyled>SHOP</ShopBoxStyled>
-          <div
-            style={{
-              display: 'flex',
-              position: 'absolute',
-              marginLeft: '-28px',
-              marginRight: '28px',
-              flexDirection: 'row',
-              backgroundColor: 'white',
-              zIndex: 3000
-            }}
-          >
-            <StyledBoxDrop>
+          <div className="ShopBoxStyled">SHOP</div>
+          <div className="shop-flex">
+            <div className="StyledBoxDrop">
               {this.state.toggleDrop ? (
                 this.state.entries.map((entry, index) => {
                   return (
@@ -100,16 +75,16 @@ class Shop extends React.Component {
               ) : (
                 <div />
               )}
-            </StyledBoxDrop>
-            <StyledBoxDrop>
+            </div>
+            <div className="StyledBoxDrop">
               {this.state.display && this.state.toggleDrop ? (
                 <SpecificCatEntry />
               ) : (
                 <div />
               )}
-            </StyledBoxDrop>
+            </div>
           </div>
-        </StyledShop>
+        </div>
       </div>
     );
   }

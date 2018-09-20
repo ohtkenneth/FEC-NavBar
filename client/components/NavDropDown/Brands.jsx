@@ -16,15 +16,15 @@ const Brands = props => {
         </h4>
         <h4>New Brands</h4>
         <div>
-          {newBrand.map(brand => (
-            <div>
+          {newBrand.map((brand, i) => (
+            <div key={i}>
               <a href="/product">{brand}</a>
             </div>
           ))}
         </div>
         <h4>Featured Brands</h4>
-        {featured.map(brand => (
-          <div>
+        {featured.map((brand, i) => (
+          <div key={i}>
             <a href="/product">{brand}</a>
           </div>
         ))}

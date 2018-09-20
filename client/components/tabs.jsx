@@ -2,11 +2,6 @@ import React from 'react';
 import Tab from './tab.jsx';
 import styled from 'styled-components';
 
-const StyledFlex = styled.div`
-  display: flex;
-  flex: 0 0 auto;
-`;
-
 class Tabs extends React.Component {
   constructor(props) {
     super(props);
@@ -32,7 +27,7 @@ class Tabs extends React.Component {
   render() {
     return (
       <div>
-        <StyledFlex>
+        <div className="StyledFlex">
           {this.state.tabNames.map((name, index) => {
             return (
               <Tab
@@ -44,7 +39,7 @@ class Tabs extends React.Component {
               />
             );
           })}
-        </StyledFlex>
+        </div>
       </div>
     );
   }

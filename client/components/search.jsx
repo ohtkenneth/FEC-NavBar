@@ -59,8 +59,8 @@ class Search extends React.Component {
           {this.state.toggleDrop ? (
             <div id="searchDrop">
               <div>Previous Searches</div>
-              {this.state.previous.map(search => {
-                return <div>{search}</div>;
+              {this.state.previous.map((search, i) => {
+                return <div key={i}>{search}</div>;
               })}
             </div>
           ) : (

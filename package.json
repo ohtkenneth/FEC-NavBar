@@ -9,7 +9,8 @@
       "react"
     ],
     "plugins": [
-      "styled-components"
+      "styled-components",
+      "babel-plugin-styled-components"
     ]
   },
   "scripts": {
