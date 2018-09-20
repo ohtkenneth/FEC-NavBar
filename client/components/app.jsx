@@ -59,107 +59,63 @@ class App extends React.Component {
   }
   render() {
     return (
-      <AppStyled
-        style={{ margin: 'auto', width: '980px', fontFamily: 'helvetica' }}
-      >
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            flexDirection: 'row'
-          }}
-        >
-          <img src="https://www.sephora.com/contentimages/homepage/090418/Homepage/DesktopMweb/2018-09-04-hp-persistent-banner-labor-day-us-slice.jpg" />
-        </div>
-        {/* blackbar */}
-        <span
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            backgroundColor: 'black',
-            padding: '4px 2px 4px 2px',
-            color: 'white',
-            fontFamily: 'Helvetica',
-            fontSize: '14px'
-          }}
-        >
-          <div style={{ flexGrow: 2 }}>3 Free Samples with every Purchase</div>
-          <span
-            style={{
-              display: 'flex'
-            }}
-          >
-            <ImageTruck height={15} width={15} fill={'white'} />
-            <div>Track Order</div>
-          </span>
-          <span
-            style={{
-              display: 'flex'
-            }}
-          >
-            <ImageLocator height={15} width={15} fill={'white'} />
-            <div>Find a Store</div>
-          </span>
-          <Country country={this.state.country} />
-        </span>
-        <span
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            flexDirection: 'row',
-            alignItems: 'center'
-          }}
-        >
-          <Search searches={this.state.searches} />
-          <h1 style={{ flexGrow: 2, textAlign: 'center' }}>SEPHORA</h1>
-          <Signup />
-          <div>
-            <Loves />
+      <AppStyled>
+        <div className="whole-body">
+          <div className="row">
+            <img src="https://www.sephora.com/contentimages/homepage/090418/Homepage/DesktopMweb/2018-09-04-hp-persistent-banner-labor-day-us-slice.jpg" />
           </div>
-          <div>
-            <Basket />
-          </div>
-        </span>
-        <span className="bottomBar">
-          <Shop />
-          <Tabs
-            showDrop={this.showDrop}
-            hideDrop={this.hideDrop}
-            selected={this.state.navDropName}
-          />
-        </span>
-        <div style={{ zIndex: 3005 }}>
-          {this.state.navDropDownToggle ? (
-            <NavDropDown
-              name={this.state.navDropName}
-              hideDropDown={this.hideDrop}
+          {/* blackbar */}
+          <span className="blackbar">
+            <div className="shipping-info">
+              3 Free Samples with every Purchase
+            </div>
+            <span className="row">
+              <ImageTruck height={15} width={15} fill={'white'} />
+              <div>Track Order</div>
+            </span>
+            <span className="row">
+              <ImageLocator height={15} width={15} fill={'white'} />
+              <div>Find a Store</div>
+            </span>
+            <Country country={this.state.country} />
+          </span>
+          <span className="titleRow">
+            <Search searches={this.state.searches} />
+            <h1>SEPHORA</h1>
+            <Signup />
+            <div>
+              <Loves />
+            </div>
+            <div>
+              <Basket />
+            </div>
+          </span>
+          <span className="bottomBar">
+            <Shop />
+            <Tabs
               showDrop={this.showDrop}
-              brands={this.state.brands}
+              hideDrop={this.hideDrop}
+              selected={this.state.navDropName}
             />
-          ) : (
-            <div />
-          )}
-        </div>
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            backgroundColor: 'black',
-            color: 'white',
-            fontFamily: 'Helvetica',
-            padding: '4px 0px 4px 0px'
-          }}
-        >
-          <a
-            style={{
-              color: 'white',
-              fontFamily: 'Helvetica',
-              fontSize: '14px'
-            }}
-          >
-            SPOTS OPEN! GET THE BEST BEAUTY SUBSCRIPTION BOX FOR JUST $10/MONTH.
-            SUBSCRIBE NOW >
-          </a>
+          </span>
+          <div>
+            {this.state.navDropDownToggle ? (
+              <NavDropDown
+                name={this.state.navDropName}
+                hideDropDown={this.hideDrop}
+                showDrop={this.showDrop}
+                brands={this.state.brands}
+              />
+            ) : (
+              <div />
+            )}
+          </div>
+          <div className="blackbar">
+            <a className="blackBarText" href="http:localhost:1337/product">
+              SPOTS OPEN! GET THE BEST BEAUTY SUBSCRIPTION BOX FOR JUST
+              $10/MONTH. SUBSCRIBE NOW >
+            </a>
+          </div>
         </div>
       </AppStyled>
     );

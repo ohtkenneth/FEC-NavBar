@@ -10,6 +10,14 @@ const StyledShop = styled.div`
     box-shadow: grey 0px 1px 8px;
   }
 `;
+const ShopBoxStyled = styled.div`
+  height: 38px;
+  z-index: 3000;
+`;
+const StyledBoxDrop = styled.div`
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.15);
+  padding-top: 22px;
+`;
 class Shop extends React.Component {
   constructor(props) {
     super(props);
@@ -66,15 +74,7 @@ class Shop extends React.Component {
             this.hideBox();
           }}
         >
-          <div
-            style={{
-              height: '38px',
-              zIndex: 3000
-            }}
-            className="shop"
-          >
-            SHOP
-          </div>
+          <ShopBoxStyled>SHOP</ShopBoxStyled>
           <div
             style={{
               display: 'flex',
@@ -86,12 +86,7 @@ class Shop extends React.Component {
               zIndex: 3000
             }}
           >
-            <span
-              style={{
-                boxShadow: '0 1px 8px rgba(0,0,0,.15)',
-                paddingTop: '22px'
-              }}
-            >
+            <StyledBoxDrop>
               {this.state.toggleDrop ? (
                 this.state.entries.map((entry, index) => {
                   return (
@@ -105,20 +100,14 @@ class Shop extends React.Component {
               ) : (
                 <div />
               )}
-            </span>
-            <span
-              style={{
-                boxShadow: '0 1px 8px rgba(0,0,0,.15)',
-                paddingTop: '22px'
-                // zIndex: 1130
-              }}
-            >
+            </StyledBoxDrop>
+            <StyledBoxDrop>
               {this.state.display && this.state.toggleDrop ? (
                 <SpecificCatEntry />
               ) : (
                 <div />
               )}
-            </span>
+            </StyledBoxDrop>
           </div>
         </StyledShop>
       </div>

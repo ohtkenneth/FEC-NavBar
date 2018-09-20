@@ -21,7 +21,6 @@ class NavDropDown extends React.Component {
     };
   }
   render() {
-    console.log('inside nav', this.state.whichTab);
     let navRender;
     if (this.props.name === 'NEW') {
       navRender = <New />;
@@ -41,15 +40,7 @@ class NavDropDown extends React.Component {
         onPointerEnter={e => this.props.showDrop(this.props.name)}
         onPointerLeave={this.props.hideDropDown}
       >
-        <div
-          style={{
-            width: '300px',
-            zIndex: 99999
-          }}
-        >
-          {navRender}
-          {/* <Brands /> */}
-        </div>
+        <div>{navRender}</div>
       </StyledNav>
     );
   }

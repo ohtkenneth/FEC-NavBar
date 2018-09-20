@@ -7,22 +7,14 @@ const Country = props => {
   // console.log(props.country);
   if (props.country === 'US') {
     countryRender = (
-      <span
-        style={{
-          display: 'flex'
-        }}
-      >
+      <span className="row">
         <USA height={15} width={15} />
         <div>US</div>
       </span>
     );
   } else {
     countryRender = (
-      <span
-        style={{
-          display: 'flex'
-        }}
-      >
+      <span className="row">
         <Can height={15} width={15} />
         <div>Can</div>
       </span>

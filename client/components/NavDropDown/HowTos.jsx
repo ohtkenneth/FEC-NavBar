@@ -11,12 +11,7 @@ const HowTos = props => {
   let guides = ['K-Beauty', 'Clean Beauty', 'Skin Hydration', 'View All'];
   return (
     <div className="NavDrops">
-      <div
-        style={{
-          flexGrow: 1.2,
-          paddingLeft: '2em'
-        }}
-      >
+      <div className="navs-text">
         <h4>Quizzes</h4>
         <div>
           {quizzes.map(quiz => (
@@ -34,12 +29,7 @@ const HowTos = props => {
       </div>
       <img src="https://www.sephora.com/contentimages/meganav/large/2018-09-13-hp-slide-charlotte-tilbury-us-ca-m-slice.jpg" />
       <img src="https://www.sephora.com/contentimages/meganav/large/2018-08-09-category-botnav-huda-us-ca-d-slice.jpg" />
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column'
-        }}
-      >
+      <div className="column">
         <img src="https://www.sephora.com/contentimages/meganav/medium/2018-08-16-hp-meganav-med-luxe-us-ca-d-slice.jpg" />
         <img src="https://www.sephora.com/contentimages/meganav/100517/2017-10-05-hp-meganav-sm-minimadness-gifts-d-us-slice.jpg" />
       </div>

@@ -44,44 +44,20 @@ class Search extends React.Component {
   render() {
     return (
       <form
+        className="Search"
         onPointerEnter={this.showSearches}
         onPointerLeave={this.showSearches}
       >
         <div>
           <div />
           <input
-            style={{
-              display: 'block',
-              fontFamily: 'helvetica',
-              fontSize: '14px',
-              width: '200px',
-              height: '40px',
-              paddingLeft: '12px',
-              paddingRight: '12px',
-              color: '#000',
-              backgroundColor: '#fff',
-              borderWidth: '1px',
-              borderRadius: '4px',
-              borderColor: '#ccc'
-            }}
+            className="searchForm"
             type="text"
             placeholder="Search"
             id="search"
           />
           {this.state.toggleDrop ? (
-            <div
-              style={{
-                position: 'absolute',
-                display: 'block',
-                backgroundColor: 'white',
-                padding: '8px 16px 8px 16px',
-                boxShadow: '0 1px 8px rgba(0,0,0,.15)',
-                lineHeight: '3',
-                marginRight: '8px',
-                width: '195px',
-                zIndex: 999
-              }}
-            >
+            <div id="searchDrop">
               <div>Previous Searches</div>
               {this.state.previous.map(search => {
                 return <div>{search}</div>;

@@ -3,12 +3,7 @@ import React from 'react';
 const New = props => {
   return (
     <div className="NavDrops">
-      <div
-        style={{
-          flexGrow: 1.2,
-          paddingLeft: '2em'
-        }}
-      >
+      <div className="navs-text">
         <h4>
           <a href="/product">Just Arrived</a>
         </h4>
@@ -39,12 +34,7 @@ const New = props => {
       </div>
       <img src="https://www.sephora.com/contentimages/meganav/large/2018-08-09-meganav-lrg-foundation-finder-us-ca-d-slice.jpg" />
       <img src="https://www.sephora.com/contentimages/meganav/large/2018-08-09-category-botnav-huda-us-ca-d-slice.jpg" />
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column'
-        }}
-      >
+      <div className="column">
         <img src="https://www.sephora.com/contentimages/meganav/medium/2018-08-16-hp-meganav-med-luxe-us-ca-d-slice.jpg" />
         <img src="https://www.sephora.com/contentimages/meganav/100517/2017-10-05-hp-meganav-sm-minimadness-gifts-d-us-slice.jpg" />
       </div>

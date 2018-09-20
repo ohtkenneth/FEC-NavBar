@@ -1,6 +1,12 @@
 import React from 'react';
 import Tab from './tab.jsx';
-// import NavDropDown from './navDropDown';
+import styled from 'styled-components';
+
+const StyledFlex = styled.div`
+  display: flex;
+  flex: 0 0 auto;
+`;
+
 class Tabs extends React.Component {
   constructor(props) {
     super(props);
@@ -25,19 +31,8 @@ class Tabs extends React.Component {
   }
   render() {
     return (
-      <div
-      // style={{ display: 'grid', gridColumn: 1 }}
-      // onPointerEnter={this.showDropDown}
-      // onPointerLeave={this.showDropDown}
-      // onPointerEnter={e => this.props.showDrop(e)}
-      // onPointerLeave={this.props.hideDrop}
-      >
-        <div
-          style={{
-            display: 'flex',
-            flex: '0 0 auto'
-          }}
-        >
+      <div>
+        <StyledFlex>
           {this.state.tabNames.map((name, index) => {
             return (
               <Tab
@@ -49,8 +44,7 @@ class Tabs extends React.Component {
               />
             );
           })}
-        </div>
-        {/* <div>{this.state.toggleDropDown ? <NavDropDown /> : <div />}</div> */}
+        </StyledFlex>
       </div>
     );
   }

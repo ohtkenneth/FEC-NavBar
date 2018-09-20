@@ -7,7 +7,6 @@ const TabDiv = styled.div`
   float: left;
   display: flex;
   justify-content: space-between;
-  /* margin-top: 20px; */
   vertical-align: 0em;
   position: relative;
   text-transform: uppercase;
@@ -36,8 +35,6 @@ class Tab extends React.Component {
     });
   }
   render() {
-    // console.log('inside tab:', this.props.name);
-
     return (
       <TabDiv
         style={{

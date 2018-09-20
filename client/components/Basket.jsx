@@ -1,7 +1,23 @@
 import React from 'react';
 import Image from 'react-svg-loader!../Images/Basket.svg';
+import styled from 'styled-components';
 
 import style from '../styles/Signup.css';
+
+const StyledBasketDropDown = styled.div`
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  top: 0;
+  right: 0;
+  justify-content: center;
+  background-color: white;
+  word-wrap: normal;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.15);
+  z-index: 1030;
+`;
+
 class Basket extends React.Component {
   constructor(props) {
     super(props);
@@ -33,35 +49,18 @@ class Basket extends React.Component {
               marginRight: '1200px',
               marginLeft: '30px',
               position: 'absolute'
-              // top: 0
             }}
           >
             {this.state.toggleDropDown ? (
-              <div
-                style={{
-                  position: 'absolute',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  width: '400px',
-                  top: 0,
-                  right: 0,
-                  // marginRight: '125px',
-                  // marginLeft: '-125px',
-                  justifyContent: 'center',
-                  backgroundColor: 'white',
-                  wordWrap: 'normal',
-                  boxShadow: '0 1px 8px rgba(0,0,0,.15)',
-                  zIndex: 1030
-                }}
-              >
+              <StyledBasketDropDown>
                 <div>Your basket is empty</div>
-                <div style={{ display: 'flex' }}>
+                <div className="row">
                   <p>Sign in to see items you may have added previously.</p>
                   <button className={style.button}>SIGN IN</button>
                 </div>
                 <p>See samples, rewards and promotions in </p>
                 <a>basket</a>
-              </div>
+              </StyledBasketDropDown>
             ) : (
               <div />
             )}

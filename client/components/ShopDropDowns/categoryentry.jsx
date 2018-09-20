@@ -6,7 +6,6 @@ const CatEntStyled = styled.div`
   padding-bottom: 1em;
   padding-left: 50px;
   padding-right: 50px;
-
   background-color: white;
   zindex: 999;
   &:hover {

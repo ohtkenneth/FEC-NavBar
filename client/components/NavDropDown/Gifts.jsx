@@ -3,12 +3,7 @@ import React from 'react';
 const Gifts = props => {
   return (
     <div className="NavDrops">
-      <div
-        style={{
-          flexGrow: 1.2,
-          paddingLeft: '2em'
-        }}
-      >
+      <div className="navs-text">
         <h4>
           <a href="/product">Gift Cards</a>
         </h4>
@@ -41,12 +36,7 @@ const Gifts = props => {
           <a href="/product">$100 and Under</a>
         </div>
       </div>
-      <div
-        style={{
-          flexGrow: 1.2,
-          paddingLeft: '2em'
-        }}
-      >
+      <div className="navs-text">
         <h4>By Category</h4>
         <div>
           <a href="/product">Makeup</a>
@@ -68,12 +58,7 @@ const Gifts = props => {
         </div>
       </div>
       <img src="https://www.sephora.com/contentimages/homepage/042418/Meganav/2018-04-19-meganav-lg-button-gift-finder-evergreen-slice.jpg" />
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column'
-        }}
-      >
+      <div className="column">
         <img src="https://www.sephora.com/contentimages/meganav/medium/2018-08-16-hp-meganav-med-luxe-us-ca-d-slice.jpg" />
         <img src="https://www.sephora.com/contentimages/meganav/100517/2017-10-05-hp-meganav-sm-minimadness-gifts-d-us-slice.jpg" />
       </div>
