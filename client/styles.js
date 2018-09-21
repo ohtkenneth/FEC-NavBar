@@ -177,18 +177,19 @@ module.exports = styled.div`
   .shops {
     height: 38px;
     padding: 22px 28px 0px 28px;
-    z-index: 3000;
+    z-index: 9999;
     &:hover {
       box-shadow: grey 0px 1px 8px;
     }
   }
   .ShopBoxStyled {
     height: 38px;
-    z-index: 3000;
+    z-index: 9999;
   }
   .StyledBoxDrop {
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.15);
     padding-top: 22px;
+    z-index: 9999;
   }
   .shop-flex {
     display: flex;
@@ -197,14 +198,14 @@ module.exports = styled.div`
     margin-right: 28px;
     flex-direction: row;
     background-color: white;
-    zIndex: 3000;
+    zIndex: 9999;
   }
   .CatEntStyled {
     padding-bottom: 1em;
     padding-left: 50px;
     padding-right: 50px;
     background-color: white;
-    zindex: 999;
+    zindex: 9999;
     &:hover {
       font-weight: bold;
     }
