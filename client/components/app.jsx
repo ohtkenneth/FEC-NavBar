@@ -28,7 +28,7 @@ class App extends React.Component {
   }
   componentDidMount() {
     axios
-      .get('/product', { params: {} })
+      .get('http://54.183.219.30:5000/product', { params: {} })
       .then(({ data }) => {
         console.log('here is the response', data);
         this.setState({

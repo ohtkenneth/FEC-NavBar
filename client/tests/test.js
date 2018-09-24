@@ -17,7 +17,7 @@ describe('testing to see if test even work', () => {
   });
 
   it('testing the testing suite', () => {
-    wrapper.find('div').simulate('onPointerEnter');
+    wrapper.find('div.StyledNav').simulate('onPointerEnter');
     expect(wrapper.state().whichTab).to.equal('NEW');
   });
 });
