@@ -27,11 +27,11 @@ const HowTos = props => {
           </div>
         ))}
       </div>
-      <img src="https://imgur.com/DuIFHwM" />
-      <img src="https://imgur.com/UNXs0lP" />
+      <img src="https://imgur.com/DuIFHwM.jpg" />
+      <img src="https://imgur.com/UNXs0lP.jpg" />
       <div className="column">
-        <img src="https://imgur.com/V3S5pMR" />
-        <img src="https://imgur.com/gTDWOmw" />
+        <img src="https://imgur.com/V3S5pMR.jpg" />
+        <img src="https://imgur.com/gTDWOmw.jpg" />
       </div>
     </div>
   );

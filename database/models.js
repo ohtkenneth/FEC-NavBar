@@ -1,5 +1,6 @@
 const db = require('./index.js');
 const mongoose = require('mongoose');
+const random = require('mongoose-simple-random');
 
 var photoSchema = new mongoose.Schema({
   bannerUrl: String,
@@ -13,6 +14,7 @@ var searchSchema = new mongoose.Schema({
 var brandSchema = new mongoose.Schema({
   brand: String
 });
+searchSchema.plugin(random);
 var brand = mongoose.model('brand', brandSchema);
 var search = mongoose.model('search', searchSchema);
 var photo = mongoose.model('photo', photoSchema);

@@ -21,8 +21,8 @@ var SpecificCatEntry = props => {
       </div>
       <div className="column">
         <h5>Featured</h5>
-        <img src="https://imgur.com/B7OA7Fs" />
-        <img src="https://imgur.com/c9lN5iZ" />
+        <img src="https://imgur.com/B7OA7Fs.jpg" />
+        <img src="https://imgur.com/c9lN5iZ.jpg" />
       </div>
     </div>
   );

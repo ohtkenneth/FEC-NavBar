@@ -1,9 +1,13 @@
 const db = require('../database/models.js');
+const random = require('mongoose-simple-random');
 
 const controller = {
   fetch: (req, res) => {
+    // db.search.count().exec((err, count) => {
+
+    // })
     db.search
-      .find(req.query, (err, results) => {
+      .findRandom(req.query, {}, { limit: 10 }, (err, results) => {
         if (err) {
           console.log('sent a 404', err);
           res.status(404).send(err);

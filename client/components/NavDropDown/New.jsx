@@ -32,11 +32,11 @@ const New = props => {
           <a href="/product">View All</a>
         </div>
       </div>
-      <img src="https://imgur.com/JlXerio" />
-      <img src="https://imgur.com/DuIFHwM" />
+      <img src="https://imgur.com/JlXerio.jpg" />
+      <img src="https://imgur.com/DuIFHwM.jpg" />
       <div className="column">
-        <img src="https://imgur.com/Twj3sNy" />
-        <img src="https://imgur.com/B7OA7Fs" />
+        <img src="https://imgur.com/Twj3sNy.jpg" />
+        <img src="https://imgur.com/B7OA7Fs.jpg" />
       </div>
     </div>
   );

@@ -6,17 +6,19 @@ import axios from 'axios';
 class Search extends React.Component {
   constructor(props) {
     super(props);
+    console.log(props.searches);
     this.state = {
       query: '',
-      previous: props.searches.filter((search, i) => i < 5),
+      previous: [],
       toggleDrop: false
     };
     this.showSearches = this.showSearches.bind(this);
     console.log('this is the searches', props.searches);
+    // props.searches.filter((search, i) => i < 5),
   }
   componentDidMount() {
     axios
-      .get('http://52.53.254.60:5000/product', { params: {} })
+      .get('http://52.53.254.60:5000/product/searches', { params: {} })
       .then(({ data }) => {
         console.log('here is the response', data);
         this.setState({
@@ -42,6 +44,7 @@ class Search extends React.Component {
     console.log('selected');
   }
   render() {
+    console.log(this.state.previous);
     return (
       <form
         className="Search"

@@ -57,10 +57,10 @@ const Gifts = props => {
           <a href="/product">Men</a>
         </div>
       </div>
-      <img src="https://imgur.com/FzpVRJy" />
+      <img src="https://imgur.com/FzpVRJy.jpg" />
       <div className="column">
-        <img src="https://imgur.com/7DaGRVS" />
-        <img src="https://imgur.com/PuZNfK7" />
+        <img src="https://imgur.com/7DaGRVS.jpg" />
+        <img src="https://imgur.com/PuZNfK7.jpg" />
       </div>
     </div>
   );

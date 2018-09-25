@@ -31,13 +31,13 @@ const Brands = props => {
           </div>
         ))}
       </div>
-      <img src="https://imgur.com/VwaXlt8" />
+      <img src="https://imgur.com/VwaXlt8.jpg" />
       <div className="column">
-        <img src="https://imgur.com/DuIFHwM" />
+        <img src="https://imgur.com/DuIFHwM.jpg" />
       </div>
       <div className="column">
-        <img src="https://imgur.com/c9lN5iZ" />
-        <img src="https://imgur.com/c9lN5iZ" />
+        <img src="https://imgur.com/c9lN5iZ.jpg" />
+        <img src="https://imgur.com/c9lN5iZ.jpg" />
       </div>
     </div>
   );

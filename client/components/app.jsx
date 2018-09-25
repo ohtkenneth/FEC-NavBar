@@ -29,7 +29,7 @@ class App extends React.Component {
   }
   componentDidMount() {
     axios
-      .get('http://localhost:5000/product/searches', { params: {} })
+      .get('http://52.53.254.60:5000/product/searches', { params: {} })
       .then(({ data }) => {
         console.log('here is the response', data);
         this.setState({
@@ -40,13 +40,13 @@ class App extends React.Component {
         this.setState({
           brands: data.map(brands => brands.brand)
         });
-        console.log('inside app', this.state.searches);
+        console.log('inside app these are the brands', this.state.brands);
       })
       .catch(err => {
         console.error('Something went wrong', err);
       });
     axios
-      .get('http://localhost:5000/product/ads')
+      .get('http://52.53.254.60:5000/product/ads')
       .then(({ data }) => {
         console.log('this is the data for ads', data);
         this.setState({
@@ -125,7 +125,11 @@ class App extends React.Component {
             )}
           </div>
           <div className="blackbar">
-            <a className="blackBarText" href="http:localhost:1337/product">
+            <a
+              className="blackBarTe
+            xt"
+              href="http:localhost:1337/product"
+            >
               SPOTS OPEN! GET THE BEST BEAUTY SUBSCRIPTION BOX FOR JUST
               $10/MONTH. SUBSCRIBE NOW >
             </a>
