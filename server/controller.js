@@ -15,6 +15,15 @@ const controller = {
       .limit(10);
     console.log('here is the req in controller', req.query);
   },
+  fetchAds: (req, res) => {
+    db.photo.find(req.query, (err, results) => {
+      if (err) {
+        res.status(404).send(err);
+      } else {
+        res.status(200).send(results);
+      }
+    });
+  },
   post: (req, res) => {
     let search = db.search;
     new search(req.body).save((err, result) => {

@@ -21,8 +21,8 @@ var SpecificCatEntry = props => {
       </div>
       <div className="column">
         <h5>Featured</h5>
-        <img src="https://www.sephora.com/contentimages/meganav/medium/2018-08-16-hp-meganav-med-luxe-us-ca-d-slice.jpg" />
-        <img src="https://www.sephora.com/contentimages/meganav/100517/2017-10-05-hp-meganav-sm-minimadness-gifts-d-us-slice.jpg" />
+        <img src="https://imgur.com/B7OA7Fs" />
+        <img src="https://imgur.com/c9lN5iZ" />
       </div>
     </div>
   );

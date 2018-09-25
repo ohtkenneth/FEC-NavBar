@@ -3,12 +3,12 @@ import React from 'react';
 const StoresLocator = props => {
   return (
     <div className="NavDrops">
-      <img src="https://www.sephora.com/contentimages/storehq/053117/mega-nav/2015-05-31-hp-meganav-stores-services-beauty-together-lg-d-slice.jpg" />
-      <img src="https://www.sephora.com/contentimages/storehq/053117/mega-nav/2015-05-31-hp-meganav-stores-classes-correct-conceal-lg-d-slice.jpg" />
-      <img src="https://www.sephora.com/contentimages/storehq/053117/mega-nav/2015-05-31-hp-meganav-stores-events-discover-together-lg-d-slice.jpg" />
+      <img src="https://imgur.com/zXiL88u" />
+      <img src="https://imgur.com/sVw2UTF" />
+      <img src="https://imgur.com/zVHiM8U" />
       <div className="column">
-        <img src="https://www.sephora.com/contentimages/storehq/053117/mega-nav/2015-05-31-hp-meganav-stores-find-sephora-med-d-slice.jpg" />
-        <img src="https://www.sephora.com/contentimages/storehq/053117/mega-nav/2015-05-31-hp-meganav-stores-services-book-reservation-med-d-slice.jpg" />
+        <img src="https://imgur.com/mnNpxDy" />
+        <img src="https://imgur.com/3hfAgUd" />
       </div>
     </div>
   );

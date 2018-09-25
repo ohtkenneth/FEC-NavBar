@@ -11,23 +11,43 @@ class NavDropDown extends React.Component {
     super(props);
     this.state = {
       whichTab: props.name,
-      brands: props.brands
+      brands: props.brands,
+      ads: props.ads
     };
   }
   render() {
+    console.log(this.props.ads);
     let navRender;
     if (this.props.name === 'NEW') {
-      navRender = <New />;
+      let newads = this.props.ads.filter((ad, index) => {
+        return ad.location === 'NEW';
+      });
+      navRender = <New ads={newads} />;
     } else if (this.props.name === 'BRANDS') {
-      navRender = <Brands brands={this.state.brands} />;
+      let newads = this.props.ads.filter((ad, index) => {
+        return ad.location === 'BRANDS';
+      });
+      navRender = <Brands brands={this.state.brands} ads={newads} />;
     } else if (this.props.name === 'GIFTS') {
-      navRender = <Gifts />;
+      let newads = this.props.ads.filter((ad, index) => {
+        return ad.location === 'GIFTS';
+      });
+      navRender = <Gifts ads={newads} />;
     } else if (this.props.name === 'COMMUNITY') {
-      navRender = <Community />;
+      let newads = this.props.ads.filter((ad, index) => {
+        return ad.location === 'COMMUNITY';
+      });
+      navRender = <Community ads={newads} />;
     } else if (this.props.name === 'HOW-TOS') {
-      navRender = <HowTos />;
+      let newads = this.props.ads.filter((ad, index) => {
+        return ad.location === 'HOW-TOS';
+      });
+      navRender = <HowTos ads={newads} />;
     } else {
-      navRender = <StoresLocator />;
+      let newads = this.props.ads.filter((ad, index) => {
+        return ad.location === 'STORES';
+      });
+      navRender = <StoresLocator ads={newads} />;
     }
     return (
       <div

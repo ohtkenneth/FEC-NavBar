@@ -57,10 +57,10 @@ const Gifts = props => {
           <a href="/product">Men</a>
         </div>
       </div>
-      <img src="https://www.sephora.com/contentimages/homepage/042418/Meganav/2018-04-19-meganav-lg-button-gift-finder-evergreen-slice.jpg" />
+      <img src="https://imgur.com/FzpVRJy" />
       <div className="column">
-        <img src="https://www.sephora.com/contentimages/meganav/medium/2018-08-16-hp-meganav-med-luxe-us-ca-d-slice.jpg" />
-        <img src="https://www.sephora.com/contentimages/meganav/100517/2017-10-05-hp-meganav-sm-minimadness-gifts-d-us-slice.jpg" />
+        <img src="https://imgur.com/7DaGRVS" />
+        <img src="https://imgur.com/PuZNfK7" />
       </div>
     </div>
   );

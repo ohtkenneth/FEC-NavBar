@@ -21,6 +21,7 @@ class App extends React.Component {
       navDropName: '',
       searches: [],
       brands: [],
+      ads: [],
       country: 'US'
     };
     this.showDrop = this.showDrop.bind(this);
@@ -28,7 +29,7 @@ class App extends React.Component {
   }
   componentDidMount() {
     axios
-      .get('http://54.183.219.30:5000/product', { params: {} })
+      .get('http://localhost:5000/product/searches', { params: {} })
       .then(({ data }) => {
         console.log('here is the response', data);
         this.setState({
@@ -40,6 +41,19 @@ class App extends React.Component {
           brands: data.map(brands => brands.brand)
         });
         console.log('inside app', this.state.searches);
+      })
+      .catch(err => {
+        console.error('Something went wrong', err);
+      });
+    axios
+      .get('http://localhost:5000/product/ads')
+      .then(({ data }) => {
+        console.log('this is the data for ads', data);
+        this.setState({
+          ads: data.map(ads => {
+            return ads;
+          })
+        });
       })
       .catch(err => {
         console.error('Something went wrong', err);
@@ -61,9 +75,8 @@ class App extends React.Component {
     return (
       <AppStyled>
         <div className="whole-body">
-          <div className="row">
-            <img src="https://www.sephora.com/contentimages/homepage/090418/Homepage/DesktopMweb/2018-09-04-hp-persistent-banner-labor-day-us-slice.jpg" />
-          </div>
+          {/* banner div right here*/}
+          <div className="row" />
           {/* blackbar */}
           <span className="blackbar">
             <div className="shipping-info">
@@ -105,6 +118,7 @@ class App extends React.Component {
                 hideDropDown={this.hideDrop}
                 showDrop={this.showDrop}
                 brands={this.state.brands}
+                ads={this.state.ads}
               />
             ) : (
               <div />

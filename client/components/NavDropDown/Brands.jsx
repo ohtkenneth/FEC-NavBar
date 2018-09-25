@@ -5,6 +5,8 @@ const Brands = props => {
   let featured = props.brands.filter(
     (brand, index) => index >= 5 && index < 10
   );
+
+  console.log(props.ads);
   return (
     <div className="NavDrops">
       <div className="navs-text">
@@ -29,11 +31,13 @@ const Brands = props => {
           </div>
         ))}
       </div>
-      <img src="https://www.sephora.com/contentimages/meganav/large/2018-09-13-hp-slide-charlotte-tilbury-us-ca-m-slice.jpg" />
-      <img src="https://www.sephora.com/contentimages/meganav/large/2018-08-09-category-botnav-huda-us-ca-d-slice.jpg" />
+      <img src="https://imgur.com/VwaXlt8" />
       <div className="column">
-        <img src="https://www.sephora.com/contentimages/meganav/medium/2018-08-16-hp-meganav-med-luxe-us-ca-d-slice.jpg" />
-        <img src="https://www.sephora.com/contentimages/meganav/100517/2017-10-05-hp-meganav-sm-minimadness-gifts-d-us-slice.jpg" />
+        <img src="https://imgur.com/DuIFHwM" />
+      </div>
+      <div className="column">
+        <img src="https://imgur.com/c9lN5iZ" />
+        <img src="https://imgur.com/c9lN5iZ" />
       </div>
     </div>
   );

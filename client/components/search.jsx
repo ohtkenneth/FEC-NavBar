@@ -16,7 +16,7 @@ class Search extends React.Component {
   }
   componentDidMount() {
     axios
-      .get('http://54.183.219.30:5000/product', { params: {} })
+      .get('http://52.53.254.60:5000/product', { params: {} })
       .then(({ data }) => {
         console.log('here is the response', data);
         this.setState({
