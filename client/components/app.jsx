@@ -125,11 +125,7 @@ class App extends React.Component {
             )}
           </div>
           <div className="blackbar">
-            <a
-              className="blackBarTe
-            xt"
-              href="http:localhost:1337/product"
-            >
+            <a className="blackBarText" href="http:localhost:1337/product">
               SPOTS OPEN! GET THE BEST BEAUTY SUBSCRIPTION BOX FOR JUST
               $10/MONTH. SUBSCRIBE NOW >
             </a>
