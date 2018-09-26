@@ -9,7 +9,13 @@ router
   })
   .post((req, res) => {
     controller.post(req, res);
-  });
+  })
+  .put((req, res) => {
+    controller.update(req, res);
+  })
+  .delete((req, res) => {
+    controller.delete(req, res);
+  })
 router
   .route('/brands')
   .get((req, res) => {

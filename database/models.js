@@ -8,6 +8,10 @@ var photoSchema = new mongoose.Schema({
   rectAdUrl: String
 });
 var searchSchema = new mongoose.Schema({
+  id: {
+    type: Number,
+    unique: true,
+  },
   search: String,
   brand: String
 });

@@ -29,6 +29,8 @@ const controller = {
     });
   },
   post: (req, res) => {
+    // req.body contains schema
+    // id, brand, search
     let search = db.search;
     new search(req.body).save((err, result) => {
       if (err) {
@@ -37,7 +39,23 @@ const controller = {
         res.status(201).send(result);
       }
     });
-    console.log('here is the req from post', req.body);
+  },
+  update: (req, res) => {
+    // id is query params    
+    let { id } = req.query;
+    
+    db.search.updateOne({ id }, { 
+      search: 'searchTest',
+      brand: 'brandTest',
+    })
+      .then(result => {
+        console.log('PUT result', result);
+        res.send(result);
+      }).catch(err => console.log('ERROR from controller', err));
+  },
+  delete: (req, res) => {
+    // get id
+    
   }
 };
 

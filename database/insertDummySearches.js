@@ -1,5 +1,6 @@
 const { search, photo } = require('./models.js');
-const dummy = require('./dummyData.json');
+// const dummy = require('./dummyData.json');
+const dummy = require('./newMockData.json');
 const dummyAds = require('./adDataUrls.json');
 
 var insert = () => {

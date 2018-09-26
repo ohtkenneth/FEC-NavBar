@@ -16,7 +16,8 @@
   "scripts": {
     "test": "jest",
     "build": "webpack --w",
-    "start": "nodemon ./server"
+    "start": "nodemon ./server",
+    "init": "node ./database/insertDummySearches.js"
   },
   "author": "Drew",
   "license": "ISC",
