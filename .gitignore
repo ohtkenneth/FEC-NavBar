@@ -8,4 +8,4 @@ Dockerfile
 secret
 
 config.js
-data
+data.tsv

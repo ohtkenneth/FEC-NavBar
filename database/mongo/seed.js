@@ -10,6 +10,8 @@ const dataWriteStream = fs.createWriteStream('./data/data.tsv', {
   encoding: 'utf8',
 });
 
+fs.writeFileSync('./data/data.tsv', 'id\tsearch\tbrand\t\n');
+
 dataWriteStream.on('open', () => {
   console.log('Writing data...');
   perf.start();

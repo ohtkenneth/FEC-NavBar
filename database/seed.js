@@ -3,12 +3,14 @@ const fs = require('fs');
 const perf = require('execution-time')();
 const faker = require('faker');
 
-const times = 10000000;
+const times = 100;
 
 const dataWriteStream = fs.createWriteStream('./data/data.tsv', {
   flags: 'a',
   encoding: 'utf8',
 });
+
+// fs.writeFileSync('./data/data.tsv', 'id\tsearch\tbrand\t\n');
 
 dataWriteStream.on('open', () => {
   console.log('Writing data...');

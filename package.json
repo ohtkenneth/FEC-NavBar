@@ -17,7 +17,7 @@
     "test": "jest",
     "build": "webpack --w",
     "start": "nodemon ./server",
-    "seed": "node ./database/postgres/seed.js"
+    "seed": "node --max-old-space-size=6144 ./database/postgres/seed.js"
   },
   "author": "Drew",
   "license": "ISC",
