@@ -1,5 +1,6 @@
-const db = require('../database/models.js');
+// const db = require('../database/models.js');
 const random = require('mongoose-simple-random');
+const pgModels = require('../database/postgres/models');
 
 const controller = {
   fetch: (req, res) => {
@@ -29,16 +30,28 @@ const controller = {
     });
   },
   post: (req, res) => {
+    // mongobd
     // req.body contains schema
     // id, brand, search
-    let search = db.search;
-    new search(req.body).save((err, result) => {
-      if (err) {
-        res.status(404).send(err);
-      } else {
-        res.status(201).send(result);
-      }
-    });
+    // let search = db.search;
+    // new search(req.body).save((err, result) => {
+    //   if (err) {
+    //     res.status(404).send(err);
+    //   } else {
+    //     res.status(201).send(result);
+    //   }
+    // });
+
+    // postgres
+    const { brand, search } = req.body;
+    pgModels.insertSearch({ brand, search })
+      .then(result => {
+        console.log('pg insert result', result);
+        res.send(result);
+      })
+      .catch(err => {
+        console.log('pg insert error', err);
+      });
   },
   update: (req, res) => {
     // id is query params    
@@ -54,7 +67,14 @@ const controller = {
       }).catch(err => console.log('ERROR from controller', err));
   },
   delete: (req, res) => {
-    // get id
+    // get id from body
+    const { id } = req.body;
+    db.search.deleteOne({ id })
+      .then(result => {
+        console.log(result);
+        res.send(result);
+      })
+      .catch(err => console.log(err));
     
   }
 };
