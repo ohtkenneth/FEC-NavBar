@@ -12,3 +12,4 @@ async function insertSearch(brand, search) {
 module.exports = {
   insertSearch,
 };
+
