@@ -2,46 +2,55 @@ const path = require('path');
 const fs = require('fs');
 const perf = require('execution-time')();
 const faker = require('faker');
-
-const times = 100;
-
 const dataWriteStream = fs.createWriteStream('./data/data.tsv', {
   flags: 'a',
   encoding: 'utf8',
 });
 
-// fs.writeFileSync('./data/data.tsv', 'id\tsearch\tbrand\t\n');
+let times = 10000000;
+let row = 1;
+console.log('Writing data...');
 
-dataWriteStream.on('open', () => {
-  console.log('Writing data...');
-  perf.start();
-  let million = 1;
-  for (let row = 1; row <= times; row++) {
-    dataWriteStream.write(`${row}\t${faker.commerce.productName()}\t${faker.company.companyName()}\n`, 'utf8');
-    if (row % 1000000 === 0) {
-      console.log(`Writing ${million},000,000 of 10,000,000 rows`);
-      million += 1;
+function writeData() {
+  let ok = true;
+  do {
+    row++;
+    if (row === times) {
+      // last time to write
+      dataWriteStream.write(`${row}\t${faker.commerce.productAdjective()}\t${faker.database.column()}\t${faker.image.fashion()}\n`, 'utf8');
+      const results = perf.stop();
+      console.log('writeData execution time: ' + (results.time / 1000).toFixed(5)); 
+    } else {
+      // see if should continue or wait for backpressure
+      ok = dataWriteStream.write(`${row}\t${faker.commerce.productAdjective()}\t${faker.database.column()}\t${faker.image.fashion()}\n`, 'utf8');
+      if (row % 1000000 === 0) {
+        console.log(`Wrote ${row} of 10,000,000 rows`);
+      }
+    }
+    // while still have entires and no backpressure
+  } while (row <= times && ok) {
+    if (row <= times) {
+      // had to stop early
+      dataWriteStream.once('drain', writeData);
     }
   }
-  dataWriteStream.end();
-  const results = perf.stop();
-  console.log('writeData execution time: ' + (results.time / 1000).toFixed(5));  
-});
+}
 
+perf.start();
+writeData();
 
-// for (let streams = 1; streams <= 10; streams++) {
-  // const dataWriteStream = fs.createWriteStream('./data/data.tsv', {
-  //   flags: 'a',
-  //   encoding: 'utf8',
-  // });
-//   // console.log(`Starting stream ${streams + 1} of 10`);
-//   for (let i = 1; i <= times; i++) {
-    // dataWriteStream.write(`${i}\t${faker.commerce.productName()}\t${faker.company.companyName()}\n`, 'utf8');
-    // if (i % times === 0) {
-    //   console.log(`Writing ${streams},000,000 of 10,000,000 rows`);
+// dataWriteStream.on('open', () => {
+//   console.log('Writing data...');
+//   perf.start();
+//   let million = 1;
+//   for (let row = 1; row <= times; row++) {
+//     dataWriteStream.write(`${row}\t${faker.commerce.productAdjective()}\t${faker.database.column()}\t${faker.image.fashion()}\n`, 'utf8');
+    // if (row % 1000000 === 0) {
+    //   console.log(`Writing ${million},000,000 of 10,000,000 rows`);
+    //   million += 1;
     // }
 //   }
 //   dataWriteStream.end();
-// }
-// const results = perf.stop();
-// console.log('writeData execution time: ' + (results.time / 1000).toFixed(5));  
+  // const results = perf.stop();
+  // console.log('writeData execution time: ' + (results.time / 1000).toFixed(5));  
+// });
