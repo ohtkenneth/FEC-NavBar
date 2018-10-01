@@ -2,7 +2,6 @@ const perf = require('execution-time')();
 const models = require('../database/postgres/models');
 
 const TEST_TABLE = 'testing';
-const threshold = 15;
 
 describe('postgres', () => {
   beforeAll(() => {
@@ -20,34 +19,23 @@ describe('postgres', () => {
       });
   });
 
+  test('should be able to update a row', (done) => {
+    const data = {
+      location: 'newLoc',
+      size: 'newSize',
+      url: 'newurl.com',
+    };
+    return models.updateRow(TEST_TABLE, 1, data)
+      .then(result => {
+        expect(result).toBe(1);
+        done();
+      });
+  });
+
   test('should be able to delete a row', (done) => {
     return models.deleteRow(TEST_TABLE, 1)
       .then(result => {
         expect(result).toBe(1);
-        done();
-      });
-  });
-
-  test(`should be able to insert a row below ${threshold}ms`, (done) => {
-    perf.start();
-    models.insertRow(TEST_TABLE, 2, 'testLoc', 'testSize', 'testurl.com')
-      .then(result => {
-        const { time } = perf.stop();
-
-        expect(result).toHaveProperty('rowCount', 1);
-        expect(time).toBeLessThan(threshold);
-        done();
-      });
-  });
-
-  test(`should be able to delete a row below ${threshold}ms`, (done) => {
-    perf.start();
-    models.deleteRow(TEST_TABLE, 2)
-      .then(result => {
-        const { time } = perf.stop();
-
-        expect(result).toBe(1);
-        expect(time).toBeLessThan(threshold);
         done();
       });
   });

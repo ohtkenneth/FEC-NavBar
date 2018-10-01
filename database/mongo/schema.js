@@ -1,11 +1,12 @@
 const mongoose = require('mongoose');
 
-var adSchema = new mongoose.Schema({
+const photoSchema = new mongoose.Schema({
   bannerUrl: String,
   squareAdUrl: String,
   rectAdUrl: String
 });
-var searchSchema = new mongoose.Schema({
+
+const searchSchema = new mongoose.Schema({
   id: {
     type: Number,
     unique: true,
@@ -13,12 +14,24 @@ var searchSchema = new mongoose.Schema({
   search: String,
   brand: String
 });
-var brandSchema = new mongoose.Schema({
+
+const brandSchema = new mongoose.Schema({
   brand: String
+});
+
+const adSchema = new mongoose.Schema({
+  id: {
+    type: Number,
+    unique: true,
+  },
+  location: String,
+  size: String,
+  url: String,
 });
 
 module.exports = {
   adSchema,
+  photoSchema,
   searchSchema,
   brandSchema,
 };

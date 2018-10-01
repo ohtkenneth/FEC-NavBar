@@ -9,6 +9,15 @@ async function insertRow(tableName, id, location, size, url) {
   }
 };
 
+async function updateRow(tableName, id, data) {
+  try {
+    const result = await knex(tableName).where({ id }).update(data);
+    return result;
+  } catch(err) {
+    return err;
+  }
+}
+
 async function deleteRow(tableName, id) {
   try {
     const result = await knex(tableName).where('id', id).del();
@@ -47,6 +56,7 @@ async function createTestTable(tableName) {
 
 module.exports = {
   insertRow,
+  updateRow,
   deleteRow,
   createTestTable,
   dropTable,

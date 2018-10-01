@@ -1,5 +1,9 @@
 // const db = require('../database/models.js');
+// need to require db here since mongoModels does not require db
+// separate mongo connection to test models
+const db = require('../database/mongo/index.js');
 const random = require('mongoose-simple-random');
+const mongoModels = require('../database/mongo/models');
 const pgModels = require('../database/postgres/models');
 
 const controller = {
