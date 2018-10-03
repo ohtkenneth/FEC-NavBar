@@ -14,7 +14,7 @@ describe('mongodb', () => {
   });
 
   test('should be able to create a document', (done) => {
-    models.createAd(1, 'testLoc', 'testSize', 'testurl.com')
+    models.createAd(1, 'testLoc', 'testSize', 'testBrand', 'testSeason', 'testurl.com')
       .then(result => {
 
         expect(result).toHaveProperty('_id');
@@ -38,7 +38,15 @@ describe('mongodb', () => {
   })
 
   test('should be able to update a document', (done) => {
-    models.updateAd(1, { location: 'newLoc', size: 'newSize', url: 'newurl.com' })
+    let updateData = { 
+      location: 'newLoc', 
+      size: 'newSize', 
+      brand: 'newBrand',
+      season: 'newSeason',
+      url: 'newurl.com' 
+    };
+
+    models.updateAd(1, updateData)
       .then(result => {
 
         expect(result).toHaveProperty('n', 1);

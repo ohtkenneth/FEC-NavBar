@@ -17,7 +17,7 @@ describe('mongodb', () => {
 
   test(`should be able to insert a document below ${threshold}ms`, (done) => {
     perf.start();
-    models.createAd(testId, 'testLoc', 'testSize', 'testurl.com')
+    models.createAd(testId, 'testLoc', 'testSize', 'testBrand', 'testSeason', 'testurl.com')
       .then(result => {
         const { time } = perf.stop();
 
@@ -40,8 +40,15 @@ describe('mongodb', () => {
   });
 
   test(`should be able to update a document below ${threshold}ms`, done => {
+    let updateData = { 
+      location: 'newLoc', 
+      size: 'newSize', 
+      brand: 'newBrand',
+      season: 'newSeason',
+      url: 'newurl.com' 
+    };
     perf.start();
-    models.updateAd(testId, { location: 'newLoc', size: 'newSize', url: 'newurl.com' })
+    models.updateAd(testId, updateData)
     .then(result => {
       const { time } = perf.stop();
       

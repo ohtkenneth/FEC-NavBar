@@ -26,6 +26,8 @@ const adSchema = new mongoose.Schema({
   },
   location: String,
   size: String,
+  brand: String,
+  season: String,
   url: String,
 });
 

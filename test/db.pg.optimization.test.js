@@ -16,7 +16,7 @@ describe('postgres optimization', () => {
 
   test(`should be able to insert a row below ${threshold}ms`, done => {
     perf.start();
-    models.insertRow(TEST_TABLE, 2, 'testLoc', 'testSize', 'testurl.com')
+    models.insertRow(TEST_TABLE, 2, 'testLoc', 'testSize', 'testBrand', 'testSeason', 'testurl.com')
       .then(result => {
         const { time } = perf.stop();
 
@@ -31,6 +31,8 @@ describe('postgres optimization', () => {
     const data = {
       location: 'newLoc2',
       size: 'newSize2',
+      brand: 'testBrand2',
+      season: 'testSeason2',
       url: 'newurl2.com',
     };
 

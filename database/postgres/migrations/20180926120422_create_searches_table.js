@@ -4,6 +4,8 @@ exports.up = function(knex, Promise) {
     table.integer('id').primary();
     table.string('location');
     table.string('size');
+    table.string('brand');
+    table.string('season');
     table.string('url');
   });
 };

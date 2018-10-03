@@ -12,7 +12,7 @@ describe('postgres', () => {
   });
 
   test('should be able to insert a new row', (done) => {
-    return models.insertRow(TEST_TABLE, 1, 'testLoc', 'testSize', 'testurl.com')
+    return models.insertRow(TEST_TABLE, 1, 'testLoc', 'testSize', 'testBrand', 'testSeason', 'testurl.com')
       .then(result => {
         expect(result).toHaveProperty('rowCount', 1);
         done();
@@ -23,6 +23,8 @@ describe('postgres', () => {
     const data = {
       location: 'newLoc',
       size: 'newSize',
+      brand: 'newBrand',
+      season: 'newSeason',
       url: 'newurl.com',
     };
     return models.updateRow(TEST_TABLE, 1, data)
