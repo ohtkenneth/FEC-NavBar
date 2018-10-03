@@ -36,9 +36,15 @@ router
 router
   .route('/ads')
   .get((req, res) => {
-    controller.fetchAds(req, res);
+    controller.fetchAd(req, res);
   })
   .post((req, res) => {
-    controller.post(req, res);
+    controller.createAd(req, res);
+  })
+  .put((req, res) => {
+    controller.updateAd(req, res);
+  })
+  .delete((req, res) => {
+    controller.deleteAd(req, res);
   });
 module.exports = router;

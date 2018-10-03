@@ -7,7 +7,7 @@ async function insertRow(tableName, id, location, size, url) {
   } catch(err) {
     return err;
   }
-};
+}
 
 async function updateRow(tableName, id, data) {
   try {

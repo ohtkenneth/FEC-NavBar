@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { adSchema, searchSchema, photoSchema } = require('./schema.js');
 
-var Ad = mongoose.model('Ad', adSchema);
+var Ad = mongoose.model('Advertisement', adSchema);
 
 async function findAd(id) {
   try {
@@ -12,9 +12,9 @@ async function findAd(id) {
   }
 }
 
-async function createAd(id, location, size, url) {
+async function createAd(id, location, size, brand, season, url) {
   try {
-    const result = await Ad.create({ id, location, size, url });
+    const result = await Ad.create({ id, location, size, brand, season, url });
     return result;
   } catch(err) {
     return err;
