@@ -6,6 +6,6 @@ grunt-aws.json
 .bablerc
 Dockerfile
 secret
+.env
 
-config.js
-data.tsv
+data
