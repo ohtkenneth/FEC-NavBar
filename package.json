@@ -2,7 +2,7 @@
   "name": "sephoranavbar",
   "version": "1.0.0",
   "description": "Clone of Sephora's Navigation Bar",
-  "main": "server/index.js",
+  "main": "server/server.js",
   "babel": {
     "presets": [
       "env",

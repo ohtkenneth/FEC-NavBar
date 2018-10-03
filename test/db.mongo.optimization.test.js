@@ -3,21 +3,21 @@ const mongoose = require('mongoose');
 const models = require('../database/mongo/models');
 const perf = require('execution-time')();
 
-const threshold = 35;
+const threshold = 100;
 const testId = 10000001;
 
 describe('mongodb', () => {
   beforeAll(() => {
-    mongoose.connect(`mongodb://${config.serverIp}/${config.name}`);
+    return mongoose.connect(`mongodb://${config.serverIp}/${config.name}`);
   });
   afterAll((done) => {
     // DO NOT DROP DATABASE, USING WITH MOCK DATA
-    mongoose.disconnect(done);
+    return mongoose.disconnect(done);
   });
 
-  test(`should be able to insert a document below ${threshold}ms`, (done) => {
+  test(`should be able to insert a document below ${threshold}ms`, async function(done) {
     perf.start();
-    models.createAd(testId, 'testLoc', 'testSize', 'testBrand', 'testSeason', 'testurl.com')
+    return models.createAd(testId, 'testLoc', 'testSize', 'testBrand', 'testSeason', 'testurl.com')
       .then(result => {
         const { time } = perf.stop();
 
@@ -27,9 +27,9 @@ describe('mongodb', () => {
       });
   });
 
-  test(`should be able to find a document below ${threshold}ms`, done => {
+  test(`should be able to find a document below ${threshold}ms`, async function(done) {
     perf.start();
-    models.findAd(testId)
+    return models.findAd(testId)
       .then(result => {
         const { time } = perf.stop();
 
@@ -39,7 +39,7 @@ describe('mongodb', () => {
       });
   });
 
-  test(`should be able to update a document below ${threshold}ms`, done => {
+  test(`should be able to update a document below ${threshold}ms`, async function(done) {
     let updateData = { 
       location: 'newLoc', 
       size: 'newSize', 
@@ -48,7 +48,7 @@ describe('mongodb', () => {
       url: 'newurl.com' 
     };
     perf.start();
-    models.updateAd(testId, updateData)
+    return models.updateAd(testId, updateData)
     .then(result => {
       const { time } = perf.stop();
       
@@ -60,9 +60,9 @@ describe('mongodb', () => {
     });
   });
 
-  test(`should be able to delete a document below ${threshold}ms`, done => {
+  test(`should be able to delete a document below ${threshold}ms`, async function(done) {
     perf.start();
-    models.deleteAd(testId)
+    return models.deleteAd(testId)
       .then(result => {
         const { time } = perf.stop();
 
