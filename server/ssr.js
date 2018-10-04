@@ -1,17 +1,24 @@
 import path from 'path';
 import React from 'react';
 import express from 'express';
-import ReactDOMServer, { renderToNodeStream } from 'react-dom/server';
+import ReactDOMServer from 'react-dom/server';
 import { ServerStyleSheet } from 'styled-components';
+
+import morgan from 'morgan';
+const parser = require('body-parser');
+const cors = require('cors');
 
 // client index
 import App from '../client/components/app.jsx';
-import Html from '../server-build/Html.js';
+import Html from './Html.js';
 
 const PORT = 3000;
 const app = express();
 
-app.use(express.static(path.resolve(__dirname, '../static/')));
+app.use(parser.json());
+app.use(parser.urlencoded({ extended: true }));
+app.use(cors());
+app.use(morgan('dev'));
 
 // css stuff
 app.get('/*', (req, res) => {

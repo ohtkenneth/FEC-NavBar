@@ -5,12 +5,10 @@ module.exports = {
   entry: './server/ssr.js',
   target: 'node',
   externals: [ nodeExternals() ],
-
   output: {
-    path: path.resolve('server-build'),
+    path: path.resolve(__dirname, 'server-build'),
     filename: 'index.js',
   },
-
   module: {
     rules: [
       {

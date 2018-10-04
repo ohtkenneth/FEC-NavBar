@@ -14,7 +14,7 @@ class Search extends React.Component {
       toggleDrop: false
     };
     this.showSearches = this.showSearches.bind(this);
-    console.log('this is the searches', props.searches);
+    // console.log('this is the searches', props.searches);
     // props.searches.filter((search, i) => i < 5),
   }
   componentDidMount() {

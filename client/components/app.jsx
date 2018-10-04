@@ -138,8 +138,5 @@ class App extends React.Component {
   }
 }
 
-if (typeof document !== 'undefined') {
-  ReactDOM.hydrate(<App />, document);
-}
 
 export default App;

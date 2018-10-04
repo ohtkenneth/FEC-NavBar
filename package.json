@@ -15,7 +15,7 @@
   },
   "scripts": {
     "test": "jest --verbose=true",
-    "build": "webpack --w",
+    "build": "webpack --config webpack.config.js --w",
     "build:ssr-dev": "webpack --config webpack.server.js --mode=development --w",
     "start": "nodemon ./server/server.js",
     "seed": "node --max-old-space-size=6144 ./database/postgres/seed.js"
@@ -65,6 +65,7 @@
     "isomorphic-style-loader": "^4.0.0",
     "jest": "^23.6.0",
     "mocha": "^5.2.0",
+    "morgan": "^1.9.1",
     "postcss-loader": "^3.0.0",
     "supertest": "^3.3.0",
     "webpack-node-externals": "^1.7.2"
