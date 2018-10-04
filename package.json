@@ -16,7 +16,7 @@
   "scripts": {
     "test": "jest --verbose=true",
     "build": "webpack --w",
-    "build:ssr-dev": "webpack --config webpack.server.js --mode=development",
+    "build:ssr-dev": "webpack --config webpack.server.js --mode=development --w",
     "start": "nodemon ./server/server.js",
     "seed": "node --max-old-space-size=6144 ./database/postgres/seed.js"
   },

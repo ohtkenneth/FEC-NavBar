@@ -1,7 +1,6 @@
 import React from 'react';
 import SignupDropdown from './SignupDropdown.jsx';
 
-
 class Signup extends React.Component {
   constructor(props) {
     super(props);

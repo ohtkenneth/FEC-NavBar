@@ -7,5 +7,5 @@ grunt-aws.json
 Dockerfile
 secret
 .env
-
+server-build
 data

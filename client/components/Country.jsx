@@ -21,6 +21,8 @@ const Country = props => {
       </span>
     );
   }
-  return <span>{countryRender}</span>;
+  return (
+    <span>{countryRender}</span>
+  );
 };
 export default Country;

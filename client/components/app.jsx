@@ -13,6 +13,8 @@ import ImageLocator from 'react-svg-loader!../Images/Locator.svg';
 import Country from './Country.jsx';
 import AppStyled from '../styles.js';
 
+import ReactDOM from 'react-dom';
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -135,4 +137,9 @@ class App extends React.Component {
     );
   }
 }
+
+if (typeof document !== 'undefined') {
+  ReactDOM.hydrate(<App />, document);
+}
+
 export default App;

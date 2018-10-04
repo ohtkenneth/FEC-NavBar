@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'react-svg-loader!../Images/Basket.svg';
 
-import style from '../styles/Signup.css';
+// import style from '../styles/Signup.css';
 
 class Basket extends React.Component {
   constructor(props) {
@@ -46,5 +46,5 @@ class Basket extends React.Component {
   }
 }
 
-// export default Basket;
-export default withStyles(style)(Basket);
+export default Basket;
+// export default withStyles(style)(Basket);
