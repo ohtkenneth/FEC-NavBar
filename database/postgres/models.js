@@ -1,5 +1,14 @@
 const knex = require('./pgDb');
 
+async function createDatabase(dbName) {
+  try { 
+    const result = await knex.raw(`CREATE DATABASE ${dbName}`);
+    return result;
+  } catch(err) {
+    return err;
+  }
+}
+
 async function insertRow(tableName, id, location, size, url) {
   try {
     const result = await knex(tableName).insert({ id, location, size, url });
@@ -57,6 +66,7 @@ async function createTestTable(tableName) {
 }
 
 module.exports = {
+  createDatabase,
   insertRow,
   updateRow,
   deleteRow,

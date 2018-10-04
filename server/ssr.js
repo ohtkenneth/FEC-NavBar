@@ -1,3 +1,4 @@
+import path from 'path';
 import React from 'react';
 import express from 'express';
 import ReactDOMServer, { renderToNodeStream } from 'react-dom/server';
@@ -9,6 +10,8 @@ import Html from '../server-build/Html.js';
 
 const PORT = 3000;
 const app = express();
+
+app.use(express.static(path.resolve(__dirname, '../static/')));
 
 // css stuff
 app.get('/*', (req, res) => {

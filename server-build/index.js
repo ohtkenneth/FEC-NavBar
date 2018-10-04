@@ -406,7 +406,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var reac
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n// this file acts as html template to send with styles and bundle\n// returns template literal\nvar Html = function Html(body, styles) {\n  return \"\\n    <!DOCTYLE html>\\n    <html>\\n      <head>\\n        <title>NavBar</title>\\n        \" + styles + \"\\n      </head>\\n      <body type=\\\"margin:0\\\">\\n        <div id=\\\"navbar\\\">\" + body + \"</div>\\n      </body>\\n    </html>\\n  \";\n};\n\nexports.default = Html;\n\n//# sourceURL=webpack:///./server-build/Html.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n// this file acts as html template to send with styles and bundle\n// returns template literal\nvar Html = function Html(body, styles) {\n  return \"\\n    <!DOCTYLE html>\\n    <html>\\n      <head>\\n        <title>NavBar</title>\\n        \" + styles + \"\\n      </head>\\n      <body type=\\\"margin:0\\\">\\n        <div id=\\\"navbar\\\">\" + body + \"</div>\\n        <script src=\\\"/bundle.js\\\"></script>\\n      </body>\\n    </html>\\n  \";\n};\n\nexports.default = Html;\n\n//# sourceURL=webpack:///./server-build/Html.js?");
 
 /***/ }),
 
@@ -418,7 +418,7 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _express = __webpack_require__(/*! express */ \"express\");\n\nvar _express2 = _interopRequireDefault(_express);\n\nvar _server = __webpack_require__(/*! react-dom/server */ \"react-dom/server\");\n\nvar _server2 = _interopRequireDefault(_server);\n\nvar _styledComponents = __webpack_require__(/*! styled-components */ \"styled-components\");\n\nvar _app = __webpack_require__(/*! ../client/components/app.jsx */ \"./client/components/app.jsx\");\n\nvar _app2 = _interopRequireDefault(_app);\n\nvar _Html = __webpack_require__(/*! ../server-build/Html.js */ \"./server-build/Html.js\");\n\nvar _Html2 = _interopRequireDefault(_Html);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n// client index\nvar PORT = 3000;\nvar app = (0, _express2.default)();\n\n// css stuff\napp.get('/*', function (req, res) {\n  // app is client App\n  var sheet = new _styledComponents.ServerStyleSheet();\n  var body = _server2.default.renderToString(sheet.collectStyles(_react2.default.createElement(_app2.default, null)));\n  // all style tags \n  var styleTags = sheet.getStyleTags();\n  res.send((0, _Html2.default)(body, styleTags));\n});\n\napp.listen(PORT, function () {\n  console.log('SSR listening on port ' + PORT);\n});\n\n//# sourceURL=webpack:///./server/ssr.js?");
+eval("/* WEBPACK VAR INJECTION */(function(__dirname) {\n\nvar _path = __webpack_require__(/*! path */ \"path\");\n\nvar _path2 = _interopRequireDefault(_path);\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _express = __webpack_require__(/*! express */ \"express\");\n\nvar _express2 = _interopRequireDefault(_express);\n\nvar _server = __webpack_require__(/*! react-dom/server */ \"react-dom/server\");\n\nvar _server2 = _interopRequireDefault(_server);\n\nvar _styledComponents = __webpack_require__(/*! styled-components */ \"styled-components\");\n\nvar _app = __webpack_require__(/*! ../client/components/app.jsx */ \"./client/components/app.jsx\");\n\nvar _app2 = _interopRequireDefault(_app);\n\nvar _Html = __webpack_require__(/*! ../server-build/Html.js */ \"./server-build/Html.js\");\n\nvar _Html2 = _interopRequireDefault(_Html);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n// client index\nvar PORT = 3000;\nvar app = (0, _express2.default)();\n\napp.use(_express2.default.static(_path2.default.resolve(__dirname, '../static/')));\n\n// css stuff\napp.get('/*', function (req, res) {\n  // app is client App\n  var sheet = new _styledComponents.ServerStyleSheet();\n  var body = _server2.default.renderToString(sheet.collectStyles(_react2.default.createElement(_app2.default, null)));\n  // all style tags \n  var styleTags = sheet.getStyleTags();\n  res.send((0, _Html2.default)(body, styleTags));\n});\n\napp.listen(PORT, function () {\n  console.log('SSR listening on port ' + PORT);\n});\n/* WEBPACK VAR INJECTION */}.call(this, \"/\"))\n\n//# sourceURL=webpack:///./server/ssr.js?");
 
 /***/ }),
 
@@ -441,6 +441,17 @@ eval("module.exports = require(\"axios\");\n\n//# sourceURL=webpack:///external_
 /***/ (function(module, exports) {
 
 eval("module.exports = require(\"express\");\n\n//# sourceURL=webpack:///external_%22express%22?");
+
+/***/ }),
+
+/***/ "path":
+/*!***********************!*\
+  !*** external "path" ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"path\");\n\n//# sourceURL=webpack:///external_%22path%22?");
 
 /***/ }),
 
