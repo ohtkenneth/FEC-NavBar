@@ -16,6 +16,7 @@
   "scripts": {
     "test": "jest --verbose=true",
     "build": "webpack --w",
+    "build:server-dev": "webpack --config webpack.server.js --mode=development",
     "start": "nodemon ./server",
     "seed": "node --max-old-space-size=6144 ./database/postgres/seed.js"
   },
@@ -63,6 +64,7 @@
     "faker": "^4.1.0",
     "jest": "^23.6.0",
     "mocha": "^5.2.0",
-    "supertest": "^3.3.0"
+    "supertest": "^3.3.0",
+    "webpack-node-externals": "^1.7.2"
   }
 }

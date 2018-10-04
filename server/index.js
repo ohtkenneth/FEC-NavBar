@@ -1,5 +1,8 @@
 require('dotenv').config();
 
+const React = require('react');
+const { renderToString } = require('react-dom/server');
+
 const express = require('express');
 const parser = require('body-parser');
 const path = require('path');
