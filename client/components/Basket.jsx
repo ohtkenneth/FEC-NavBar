@@ -46,4 +46,5 @@ class Basket extends React.Component {
   }
 }
 
-export default Basket;
+// export default Basket;
+export default withStyles(style)(Basket);

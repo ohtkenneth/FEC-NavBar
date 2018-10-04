@@ -2,6 +2,7 @@ import React from 'react';
 import CategoryEntry from './ShopDropDowns/categoryentry.jsx';
 import SpecificCatEntry from './ShopDropDowns/specificCatEntry.jsx';
 
+
 class Shop extends React.Component {
   constructor(props) {
     super(props);

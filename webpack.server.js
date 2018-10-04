@@ -2,7 +2,7 @@ const path = require('path');
 const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
-  entry: './server/server.js',
+  entry: './server/ssr.js',
   target: 'node',
   externals: [ nodeExternals() ],
 
@@ -24,18 +24,6 @@ module.exports = {
           presets: ['react', 'env']
         }
       },
-      {
-        test: /\.css$/,
-        loader: 'style-loader'
-      },
-      {
-        test: /\.css$/,
-        loader: 'css-loader',
-        query: {
-          modules: true,
-          localIdentName: '[name]__[local]___[hash:base64:5]'
-        }
-      }
     ]
   },
 

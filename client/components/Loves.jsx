@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'react-svg-loader!../Images/heart.svg';
 
+
 class Loves extends React.Component {
   constructor(props) {
     super(props);

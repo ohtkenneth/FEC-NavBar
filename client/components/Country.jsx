@@ -2,6 +2,7 @@ import React from 'react';
 import USA from 'react-svg-loader!../Images/USA.svg';
 import Can from 'react-svg-loader!../Images/Canada.svg';
 
+
 const Country = props => {
   let countryRender;
   // console.log(props.country);

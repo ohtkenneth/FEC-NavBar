@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
+
 // import Image from 'react-svg-loader!../Images/Basket.svg';
 
 class Search extends React.Component {
