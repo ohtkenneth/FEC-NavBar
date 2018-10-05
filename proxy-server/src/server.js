@@ -1,7 +1,7 @@
 const app = require('./app');
-const config = require('../config');
+const { port } = require('../config');
 
-const PORT = config.port || 5000;
+const PORT = port;
 
 app.listen(PORT, () => {
   console.log(`Proxy server listening on ${PORT}`);

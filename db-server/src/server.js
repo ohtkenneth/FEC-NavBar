@@ -5,7 +5,7 @@ const path = require('path');
 const cors = require('cors');
 const app = express();
 
-const config = require('./config');
+const config = require('../config');
 const router = require('./router');
 const PORT = config.appPort;
 

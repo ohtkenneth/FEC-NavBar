@@ -11,12 +11,11 @@ import parser from 'body-parser';
 import cors from 'cors';
 
 // client index
-import App from '../client/components/app.jsx';
+import App from '../../client/components/app';
 import Html from './Html.js';
 
-console.log(process.env);
-
-const PORT = process.env.TEST_APP_PORT;
+// const PORT = process.env.TEST_APP_PORT;
+const PORT = process.env.DEV_APP_PORT;
 const app = express();
 
 app.use(cors());
