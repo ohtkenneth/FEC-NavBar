@@ -7,10 +7,10 @@ const controller = {
   fetchAd: (req, res) => {
     console.log('here is the req in controller', req.query);
     // get rand int from 9million to 10million
-    // let randId = Math.floor(Math.random() * (10000000 - 9000000 + 1)+9000000);
+    let randId = Math.floor(Math.random() * (10000000 - 9000000 + 1)+9000000);
     const { id } = req.query;
     console.log(id);
-    mongoModels.findAd(id)
+    mongoModels.findAd(randId)
       .then(result => {
         console.log(result);
         res.send(result);

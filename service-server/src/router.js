@@ -31,7 +31,6 @@ router.route('/ads')
   .get((req, res) => {
     // get method expects query string with id
     options.method = 'get';
-    options.url += '?id=5';
 
     console.log(options);
 

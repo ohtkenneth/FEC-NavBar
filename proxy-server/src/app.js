@@ -21,6 +21,7 @@ app.use(bodyParser.json());
 app.use(morgan('dev'));
 
 app.use('/product', router);
+
 // route index to service that will SSR
 app.get('/', (req, res) => {
   // get service SSR
@@ -32,7 +33,7 @@ app.get('/', (req, res) => {
   axios(options)
     .then(results => {
       // send ssr html to client
-      console.log(results);
+      console.log(results.data);
       res.send(results.data);
     })
     .catch(err => {

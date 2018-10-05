@@ -13,8 +13,8 @@ router.route('/ads')
 
     axios(options)
       .then(results => {
-        console.log(results);
-        res.send(results);
+        console.log(results.data);
+        res.send(results.data);
       })
       .catch(err => {
         console.log('ERROR from get', err);
