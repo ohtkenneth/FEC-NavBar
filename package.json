@@ -2,7 +2,7 @@
   "name": "sephoranavbar",
   "version": "1.0.0",
   "description": "Clone of Sephora's Navigation Bar",
-  "main": "./server/server.js",
+  "main": "./server-build/index.js",
   "babel": {
     "presets": [
       "env",
@@ -17,7 +17,7 @@
     "test": "jest --verbose=true",
     "build": "webpack --config webpack.config.js --w",
     "build:ssr-dev": "webpack --config webpack.server.js --mode=development --w",
-    "start": "nodemon ./server/server.js",
+    "start": "nodemon",
     "seed": "node --max-old-space-size=6144 ./database/postgres/seed.js"
   },
   "author": "Drew",

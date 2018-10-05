@@ -1,4 +1,4 @@
-const env = process.env.NODE_ENV || 'dev';
+const env = process.env.NODE_ENV || 'test';
 
 const dev = {
   app: {
@@ -14,12 +14,13 @@ const dev = {
 
 const test = {
   app: {
-    port: process.env.TEST_DB_PORT || 1337,
-    serverIp: process.env.TEST_DB_PORT || 'localhost'
+    port: process.env.TEST_APP_PORT,
+    serverIp: process.env.TEST_APP_SERVER_IP,
   },
   db: {
     port: process.env.TEST_DB_PORT || 27017,
-    serverIp: process.env.TEST_DB_PORT || 'localhost',
+    serverIp: process.env.TEST_DB_SERVER_IP,
+    name: process.env.TEST_DB_NAME
   },
 };
 

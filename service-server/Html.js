@@ -14,10 +14,11 @@ const Html = (body, styles) => {
         <script>
           console.log('hello world');
         </script> 
-        <script src="https://s3-us-west-1.amazonaws.com/fec-imdb/app/bundle.js"></script> 
+        <script src="https://s3-us-west-1.amazonaws.com/fec-imdb/app/bundle.js"></script>        
       </body>
     </html>
   `);
 }
 
 export default Html;
+
