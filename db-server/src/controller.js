@@ -1,7 +1,7 @@
 // need to require db here since mongoModels does not require db
 // separate mongo connection to test models
 const db = require('../db/index.js');
-const mongoModels = require('../db/models.js');
+const mongoModels = require('../db/models');
 
 const controller = {
   fetchAd: (req, res) => {

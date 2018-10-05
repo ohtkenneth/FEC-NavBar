@@ -1,6 +1,6 @@
-import env from 'dotenv';
-env.config();
-
+// import env from 'dotenv';
+// env.config();
+require('dotenv').config();
 import path from 'path';
 import React from 'react';
 import express from 'express';
