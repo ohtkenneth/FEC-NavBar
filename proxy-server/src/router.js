@@ -4,7 +4,7 @@ const { serviceIp, servicePort } = require('../config');
 
 // default options for axios calls
 const options = {
-  url: `https://${serviceIp}:${servicePort}/ads`,
+  url: `http://${serviceIp}:${servicePort}/product/ads`,
 };
 
 router.route('/ads')
