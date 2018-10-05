@@ -2,7 +2,7 @@ const path = require('path');
 const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
-  entry: './ssr.js',
+  entry: './src/ssr.js',
   target: 'node',
   externals: [ nodeExternals() ],
   output: {

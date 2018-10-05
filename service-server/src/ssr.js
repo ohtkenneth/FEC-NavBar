@@ -11,8 +11,9 @@ import parser from 'body-parser';
 import cors from 'cors';
 
 // client index
-import App from '../../client/components/app';
+import App from '../client/components/app';
 import Html from './Html.js';
+import router from './router.js';
 
 // const PORT = process.env.TEST_APP_PORT;
 const PORT = process.env.DEV_APP_PORT;
@@ -22,9 +23,10 @@ app.use(cors());
 app.use(parser.json());
 app.use(parser.urlencoded({ extended: true }));
 app.use(morgan('dev'));
-app.use(express.static(path.resolve(__dirname, '../static/')));
+app.use(express.static(path.resolve(__dirname, '../static')));
 
 // ROUTES
+app.use('/product', router);
 // only endpoint being used is product/ads
 
 app.get('/', (req, res) => {
