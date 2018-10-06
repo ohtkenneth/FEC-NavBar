@@ -9,3 +9,5 @@ secret
 .env
 server-build
 data
+
+*.env

@@ -1,4 +1,5 @@
 node_modules
+server-build
 grunt-aws.json
 Gruntfile.js
 .env
