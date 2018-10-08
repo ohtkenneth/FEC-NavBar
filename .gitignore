@@ -1,4 +1,4 @@
-
+newrelic.js
 node_modules
 ./static/bundle.js
 Gruntfile.js
