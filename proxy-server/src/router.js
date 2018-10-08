@@ -13,7 +13,7 @@ router.route('/ads')
 
     axios(options)
       .then(results => {
-        console.log(results.data);
+        console.log('proxy get success');
         res.send(results.data);
       })
       .catch(err => {
@@ -25,7 +25,7 @@ router.route('/ads')
 
     axios(options)
       .then(results => {
-        console.log(results);
+        console.log('proxy post success');
         res.send(results);
       })
       .catch(err => {
@@ -37,7 +37,7 @@ router.route('/ads')
 
     axios(options)
       .then(results => {
-        console.log(results);
+        console.log('proxy put success');
         res.send(results);
       })
       .catch(err => {
@@ -49,7 +49,7 @@ router.route('/ads')
 
     axios(options)
       .then(results => {
-        console.log(results);
+        console.log('delete success');
         res.send(results);
       })
       .catch(err => {

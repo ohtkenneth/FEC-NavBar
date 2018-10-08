@@ -1,0 +1,11 @@
+config:
+  target: 'http://localhost:5000'
+  phases:
+    - duration: 5
+      arrivalRate: 10
+    - duration: 5
+      arrivalRate: 10
+scenarios:
+  - flow:
+    - get:
+        url: "/product/ads"
