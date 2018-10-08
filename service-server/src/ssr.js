@@ -1,5 +1,6 @@
 // import env from 'dotenv';
 // env.config();
+import 'newrelic';
 require('dotenv').config();
 import path from 'path';
 import React from 'react';

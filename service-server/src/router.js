@@ -32,11 +32,9 @@ router.route('/ads')
     // get method expects query string with id
     options.method = 'get';
 
-    console.log(options);
-
     axios(options)
       .then(results => {
-        console.log(results.data);
+        console.log('service get succcess');
         res.send(results.data);
       })
       .catch(err => console.log('ERROR from get', err));
