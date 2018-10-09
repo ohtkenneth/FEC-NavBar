@@ -44,6 +44,15 @@ router.route('/ads')
   })
   .post((req, res) => { 
     options.method = 'post';
+    console.log('req body from service', req.body);
+    options.data = req.body;
+    // get post
+    axios(options)
+      .then(results => {
+        console.log('service post success');
+        res.send(results.data);
+      })
+      .catch(err => console.log('err from service post', err));
   })
   .put((req, res) => {
     options.method = 'put';

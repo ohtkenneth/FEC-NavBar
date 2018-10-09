@@ -1,31 +1,31 @@
 config:
   target: 'http://localhost:5000'
-  payload:
-    path: "./test/testArtillery.csv"
-    fields:
-      - "id"
-      - "location"
-      - "size"
-      - "brand"
-      - "season"
-      - "url"
+  # payload:
+  #   path: "./test/testArtillery.csv"
+  #   fields:
+  #     - "id"
+  #     - "location"
+  #     - "size"
+  #     - "brand"
+  #     - "season"
+  #     - "url"
   phases:
-    - duration: 5
-      arrivalRate: 10
-    - duration: 5
-      arrivalRate: 10
+    - duration: 60
+      arrivalRate: 500
 scenarios:
   - flow:
     - get:
         url: "/product/ads"
-    - post:
-        url: "/product/ads"
-        json:
-          id: "{{ id }}"
-          location: "{{ location }}"
-          size: "{{ size }}"
-          brand: "{{ brand }}"
-          season: "{{ season }}"
-          url: "{{ url }}"
+    # - get:
+    #     url: "/"
+    # - post:
+    #     url: "/product/ads"
+    #     json:
+    #       id: "{{ id }}"
+    #       location: "{{ location }}"
+    #       size: "{{ size }}"
+    #       brand: "{{ brand }}"
+    #       season: "{{ season }}"
+    #       url: "{{ url }}"
 
 

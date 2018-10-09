@@ -1,3 +1,4 @@
+const mongodb = require('./index');
 const mongoose = require('mongoose');
 const { adSchema, searchSchema, photoSchema } = require('./schema.js');
 
@@ -38,6 +39,8 @@ async function deleteAd(id) {
     return err;
   }
 }
+
+console.log(mongodb);
 
 module.exports = {
   createAd,

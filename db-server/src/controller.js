@@ -27,7 +27,7 @@ const controller = {
     // mongobd
     // req.body contains schema
     const { id, location, size, brand, season, url } = req.body;
-
+    console.log('req body from db', req.body);
     // test obj
 
     mongoModels.createAd(id, location, size, brand, season, url)
