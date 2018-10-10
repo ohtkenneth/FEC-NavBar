@@ -1,19 +1,20 @@
-const MongoClient = require('mongodb').MongoClient;
+const assert = require('assert');
 const config = require('../config');
 // const mongoose = require('mongoose');
 const url = `mongodb://${config.serverIp}:${config.port}`;
+const MongoClient = require('mongodb');
 
-// mongoose.connect(`mongodb://${config.serverIp}:${config.port}/${config.name}`);
-// const db = mongoose.connection;
-
-// db.on('error', err => console.log('Something went wrong ', err));
-// db.once('connect', result => {
-//   console.log(`Mongoose connected on port ${config.port} at ${config.serverIp}`);
-// });
-
-// module.exports = db;
-const db = new MongoClient(url);
-
-db.connect(url);
+// create mongodb db object to export to models
+// connect is not singleton; just need to do once
+const db = MongoClient
+  .connect(url)
+  .then(client => {
+    console.log('Successfully connected to mongodb at', url);
+    return client.db(config.name)
+  })
+  .then(db => db.collection('advertisements'))
+  .catch(err => {
+    console.log('Error connecting to mongodb at', url);
+  });
 
 module.exports = db;

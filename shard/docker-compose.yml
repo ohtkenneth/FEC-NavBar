@@ -1,0 +1,95 @@
+version: "2"
+services:
+  mongoReplSet-1:
+    container_name: mongoReplSet-1
+    image: mongo
+    command: mongod --shardsvr --replSet rs1 --dbpath /data/db --port 27017
+    ports:
+      - 27017:27017
+    expose:
+      - "27017"
+    environment:
+      TERM: xterm
+    volumes:
+      - /data/db1:/data/db
+  mongoReplSet-2:
+    container_name: mongoReplSet-2
+    image: mongo
+    command: mongod --shardsvr --replSet rs1 --dbpath /data/db --port 27017
+    ports:
+      - 27027:27017
+    expose:
+      - "27017"
+    environment:
+      TERM: xterm
+    volumes:
+      - /data/db2:/data/db
+  mongoReplSet-3:
+    container_name: mongoReplSet-3
+    image: mongo
+    command: mongod --shardsvr --replSet rs1 --dbpath /data/db --port 27017
+    ports:
+      - 27037:27017
+    expose:
+      - "27017"
+    environment:
+      TERM: xterm
+    volumes:
+      - /data/db3:/data/db
+  mongoConfig-1:
+    container_name: mongoConfig-1
+    image: mongo
+    command: mongod --configsvr --replSet mongoConfig1 --dbpath /data/db --port 27017
+    environment:
+      TERM: xterm
+    expose:
+      - "27017"
+    volumes:
+      - /data/config1:/data/db
+  mongoConfig-2:
+    container_name: mongoConfig-2
+    image: mongo
+    command: mongod --configsvr --replSet mongoConfig1 --dbpath /data/db --port 27017
+    environment:
+      TERM: xterm
+    expose:
+      - "27017"
+    volumes:
+      - /data/config2:/data/db
+  mongoConfig-3:
+    container_name: mongoConfig-3
+    image: mongo
+    command: mongod --configsvr --replSet mongoConfig1 --dbpath /data/db --port 27017
+    environment:
+      TERM: xterm
+    expose:
+      - "27017"
+    volumes:
+      - /data/config3:/data/db
+  mongoS1:
+    container_name: mongoS1
+    image: mongo
+    depends_on:
+      - mongoConfig-1
+      - mongoConfig-2
+    command: mongos --configdb mongoConfig1/mongoConfig-1:27017,mongoConfig-2:27017,mongoConfig-3:27017 --port 27017
+    ports:
+      - 27019:27017
+    expose:
+      - "27017"
+    volumes:
+      - /data/seed:/data/seed
+  mongoS2:
+    container_name: mongoS2
+    image: mongo
+    depends_on:
+      - mongoConfig-1
+      - mongoConfig-2
+    command: mongos --configdb mongoConfig1/mongoConfig-1:27017,mongoConfig-2:27017,mongoConfig-3:27017 --port 27017
+    ports:
+      - 27020:27017
+    expose:
+      - "27017"
+
+
+

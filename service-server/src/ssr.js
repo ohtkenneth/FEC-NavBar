@@ -23,7 +23,7 @@ const app = express();
 app.use(cors());
 app.use(parser.json());
 app.use(parser.urlencoded({ extended: true }));
-app.use(morgan('dev'));
+// app.use(morgan('dev'));
 app.use(express.static(path.resolve(__dirname, '../static')));
 
 // ROUTES

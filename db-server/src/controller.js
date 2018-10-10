@@ -5,34 +5,30 @@ const mongoModels = require('../db/models');
 
 const controller = {
   fetchAd: (req, res) => {
-    console.log('here is the req in controller', req.query);
     // get rand int from 9million to 10million
     let randId = Math.floor(Math.random() * (10000000 - 9000000 + 1)+9000000);
     const { id } = req.query;
     // console.log(id);
-    console.log('getting rand id', randId);
+    // console.log('getting rand id', randId);
     mongoModels.findAd(randId)
       .then(result => {
         // console.log(result);
-        console.log('mongo find success');
+        // console.log('mongo find success');
         res.send(result);
       })
       .catch(err => console.log('ERROR in findAd', err));
-    
   },
   fetchAds: (req, res) => {
     // gets range of documents
   },
   createAd: (req, res) => {
-    // mongobd
     // req.body contains schema
     const { id, location, size, brand, season, url } = req.body;
     console.log('req body from db', req.body);
-    // test obj
 
     mongoModels.createAd(id, location, size, brand, season, url)
       .then(result => {
-        console.log('mongo create success');
+        // console.log('mongo create success');
         res.send(result);
       })
       .catch(err => console.log('ERROR in createAd', err));

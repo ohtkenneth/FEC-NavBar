@@ -18,7 +18,7 @@ app.use(cors());
 app.use(helmet());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(morgan('dev'));
+// app.use(morgan('dev'));
 
 app.use('/product', router);
 
@@ -33,7 +33,6 @@ app.get('/', (req, res) => {
   axios(options)
     .then(results => {
       // send ssr html to client
-      console.log(results.data);
       res.send(results.data);
     })
     .catch(err => {
