@@ -18,7 +18,8 @@
     "build": "webpack --config webpack.config.js --w",
     "build:ssr-dev": "webpack --config webpack.server.js --mode=development --w",
     "start": "nodemon",
-    "seed": "node --max-old-space-size=6144 ./database/postgres/seed.js"
+    "seed": "node --max-old-space-size=6144 ./database/postgres/seed.js",
+    "s3": "node ./s3.js"
   },
   "author": "Drew",
   "license": "ISC",
@@ -69,6 +70,7 @@
     "mocha": "^5.2.0",
     "morgan": "^1.9.1",
     "postcss-loader": "^3.0.0",
+    "s3": "^4.4.0",
     "supertest": "^3.3.0",
     "webpack-node-externals": "^1.7.2"
   }

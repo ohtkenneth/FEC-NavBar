@@ -12,15 +12,13 @@ config:
   #     - "url"
   phases:
     - duration: 60
-      arrivalRate: 20
-  http:
-    pool: 10
+      arrivalRate: 30
 scenarios:
   - flow:
     - loop:
       - get:
           url: "/product/ads"
-      count: 15
+      count: 20
     # - get:
     #     url: "/"
     # - post:
