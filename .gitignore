@@ -11,3 +11,4 @@ server-build
 data
 *.env
 newrelic_agent.log
+shard

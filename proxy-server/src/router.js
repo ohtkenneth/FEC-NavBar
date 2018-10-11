@@ -11,16 +11,16 @@ router.route('/ads')
   .get((req, res) => {
     options.method = 'get'
 
-    // res.send('Testing proxy');
+    res.send('Testing proxy');
 
-    axios(options)
-      .then(results => {
-        // console.log('proxy get success');
-        res.send(results.data);
-      })
-      .catch(err => {
-        console.log('ERROR from get', err);
-      })
+    // axios(options)
+    //   .then(results => {
+    //     // console.log('proxy get success');
+    //     res.send(results.data);
+    //   })
+    //   .catch(err => {
+    //     console.log('ERROR from get', err);
+    //   })
   })
   .post((req, res) => {
     options.method = 'post';

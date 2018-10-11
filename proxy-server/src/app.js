@@ -22,6 +22,10 @@ app.use(bodyParser.json());
 
 app.use('/product', router);
 
+app.get('/loaderio*', (req, res) => {
+  res.send('loaderio-c3b2f8e94047df7d5b796070a000d64f');
+})
+
 // route index to service that will SSR
 app.get('/', (req, res) => {
   // get service SSR
