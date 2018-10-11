@@ -11,14 +11,15 @@ config:
   #     - "season"
   #     - "url"
   phases:
-    - duration: 60
-      arrivalRate: 30
+    - duration: 30
+      arrivalRate: 25
 scenarios:
   - flow:
     - loop:
       - get:
           url: "/product/ads"
-      count: 20
+      - think: 1
+      count: 30
     # - get:
     #     url: "/"
     # - post:

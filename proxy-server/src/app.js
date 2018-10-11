@@ -10,7 +10,7 @@ const axios = require('axios');
 
 const app = express();
 const router = require('./router');
-const { serviceIp, servicePort } = require('../config');
+const { loadBalancerIp, loadBalancerPort } = require('../config');
 
 console.log(serviceIp, servicePort);
 
@@ -22,6 +22,7 @@ app.use(bodyParser.json());
 
 app.use('/product', router);
 
+// loader io verification
 app.get('/loaderio*', (req, res) => {
   res.send('loaderio-c3b2f8e94047df7d5b796070a000d64f');
 })
@@ -30,7 +31,7 @@ app.get('/loaderio*', (req, res) => {
 app.get('/', (req, res) => {
   // get service SSR
   const options = {
-    url: `http://${serviceIp}:${servicePort}`,
+    url: `http://${loadBalancerIp}:${loadBalancerPort}`,
     method: 'get',
   };
 

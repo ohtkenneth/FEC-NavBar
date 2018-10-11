@@ -10,8 +10,8 @@ const dev = {
 const test = {
   port: process.env.TEST_APP_PORT,
   serverIp: process.env.TEST_APP_SERVER_IP,
-  serviceIp: process.env.TEST_SERVICE_IP,
-  servicePort: process.env.TEST_SERVICE_PORT,
+  loadBalancerIp: process.env.LOAD_BALANCER_IP,
+  loadBalancerPort: process.env.LOAD_BALANCER_PORT,
 };
 
 const config = {
