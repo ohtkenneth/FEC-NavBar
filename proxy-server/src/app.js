@@ -12,7 +12,7 @@ const app = express();
 const router = require('./router');
 const { loadBalancerIp, loadBalancerPort } = require('../config');
 
-console.log(serviceIp, servicePort);
+console.log(loadBalancerIp, loadBalancerPort);
 
 app.use(cors());
 app.use(helmet());
@@ -24,7 +24,7 @@ app.use('/product', router);
 
 // loader io verification
 app.get('/loaderio*', (req, res) => {
-  res.send('loaderio-c3b2f8e94047df7d5b796070a000d64f');
+  res.send('loaderio-95d1127cce0c62f13b15f7963fefa0e0');
 })
 
 // route index to service that will SSR

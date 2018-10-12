@@ -1,5 +1,3 @@
 node_modules
 .env
 *.env
-newrelic.js
-newrelic_agent.log
