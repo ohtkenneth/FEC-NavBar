@@ -1,6 +1,7 @@
 const assert = require('assert');
 const config = require('../config');
 // const mongoose = require('mongoose');
+// config.serverIP = TEST_DB_SERVER_IP
 const url = `mongodb://${config.serverIp}:${config.port}`;
 const MongoClient = require('mongodb');
 

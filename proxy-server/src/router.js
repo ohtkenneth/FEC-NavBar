@@ -1,11 +1,11 @@
 const router = require('express').Router();
 const axios = require('axios');
 const http = require('http');
-const { loadBalancerIp, loadBalancerPort } = require('../config');
+const { serviceIp, servicePort } = require('../config');
 
 // default options for axios calls to load balancer
 const options = {
-  url: `http://${loadBalancerIp}:${loadBalancerPort}/product/ads`,
+  url: `http://${serviceIp}:${servicePort}/product/ads`,
 };
 
 router.route('/ads')

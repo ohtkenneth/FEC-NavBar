@@ -7,16 +7,27 @@ const dev = {
   servicePort: process.env.DEV_SERVICE_PORT, 
 };
 
+// serviceIp and servicePort should be the same for all configs
+// just change environment vars
 const test = {
   port: process.env.TEST_APP_PORT,
   serverIp: process.env.TEST_APP_SERVER_IP,
-  loadBalancerIp: process.env.TEST_LOAD_BALANCER_IP,
-  loadBalancerPort: process.env.TEST_LOAD_BALANCER_PORT,
+  serviceIp: process.env.DEV_SERVICE_IP,
+  servicePort: process.env.DEV_SERVICE_PORT, 
 };
+
+// production service ip points to loadbalancer server
+const prod = {
+  port: process.env.PROD_APP_PORT,
+  serverIp: process.env.PROD_APP_SERVER_IP,
+  serviceIp: process.env.PROD_SERVICE_IP,
+  servicePort: process.env.PROD_SERVICE_PORT, 
+}
 
 const config = {
   dev,
   test,
-}
+  prod,
+};
 
 module.exports = config[env];
