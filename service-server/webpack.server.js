@@ -4,8 +4,8 @@ const nodeExternals = require('webpack-node-externals');
 const webpack = require('webpack');
 
 module.exports = {
-  entry: './src/ssr.js',
-  // entry: './src/cluster.js',
+  // entry: './src/ssr.js',
+  entry: './src/cluster.js',
   target: 'node',
   externals: [ nodeExternals() ],
   output: {
