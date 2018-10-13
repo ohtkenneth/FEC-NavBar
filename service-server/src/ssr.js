@@ -23,7 +23,11 @@ const app = express();
 app.use(cors());
 app.use(parser.json());
 app.use(parser.urlencoded({ extended: true }));
-// app.use(morgan('dev'));
+
+if (process.env.NODE_ENV === 'dev') {
+  app.use(morgan('dev'));
+}
+
 app.use(express.static(path.resolve(__dirname, '../static')));
 
 // ROUTES
@@ -43,7 +47,7 @@ app.get('/', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`SSR listening on port ${PORT}`);
+  console.log(`SSR listening on port ${PORT} as ${process.env.NEW_RELIC_NAME}`);
 })
 
 

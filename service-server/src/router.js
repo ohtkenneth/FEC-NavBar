@@ -32,6 +32,9 @@ router.route('/ads')
   .get((req, res) => {
     // get method expects query string with id
     options.method = 'get';
+    options.params = {
+      id: req.query.id,
+    },
 
     axios(options)
       .then(results => {

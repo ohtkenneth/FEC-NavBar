@@ -1,16 +1,21 @@
 const router = require('express').Router();
 const axios = require('axios');
 const http = require('http');
-const { serviceIp, servicePort } = require('../config');
+const { serviceIp, servicePort, cacheIp, cachePort } = require('../config');
 
 // default options for axios calls to load balancer
 const options = {
-  url: `http://${serviceIp}:${servicePort}/product/ads`,
+  // url: `http://${serviceIp}:${servicePort}/product/ads`,
+  url: `http://${cacheIp}:${cachePort}/product/ads`,
 };
 
 router.route('/ads')
   .get((req, res) => {
+    const randId = Math.floor(Math.random() * (10000000 - 9000000 + 1)+9000000);
     options.method = 'get'
+    options.params = {
+      id: randId,
+    };
 
     axios(options)
       .then(results => {

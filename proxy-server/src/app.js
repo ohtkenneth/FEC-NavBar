@@ -10,15 +10,18 @@ const axios = require('axios');
 
 const app = express();
 const router = require('./router');
-const { serviceIp, servicePort } = require('../config');
+const { serviceIp, servicePort, cacheIp, cachePort } = require('../config');
 
-console.log(serviceIp, servicePort);
+console.log(serviceIp, servicePort, cacheIp, cachePort );
 
 app.use(cors());
 app.use(helmet());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-// app.use(morgan('dev'));
+
+if (process.env.NODE_ENV === 'dev') {
+  app.use(morgan('dev'));
+}
 
 app.use('/product', router);
 
@@ -30,8 +33,10 @@ app.get('/loaderio*', (req, res) => {
 // route index to service that will SSR
 app.get('/', (req, res) => {
   // get service SSR
+  console.log("getting index")
   const options = {
-    url: `http://${serviceIp}:${servicePort}`,
+    // url: `http://${serviceIp}:${servicePort}`,
+    url: `http://${cacheIp}:${cachePort}`,
     method: 'get',
   };
 
