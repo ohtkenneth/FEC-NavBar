@@ -12,8 +12,8 @@ const dev = {
 const test = {
   port: process.env.TEST_APP_PORT,
   serverIp: process.env.TEST_APP_SERVER_IP,
-  serviceIp: process.env.DEV_SERVICE_IP,
-  servicePort: process.env.DEV_SERVICE_PORT, 
+  serviceIp: process.env.TEST_SERVICE_IP,
+  servicePort: process.env.TEST_SERVICE_PORT, 
 };
 
 // production service ip points to loadbalancer server

@@ -23,12 +23,12 @@ router.route('/ads')
   })
   .post((req, res) => {
     options.method = 'post';
-    console.log(req.body);
+    // console.log(req.body);
     options.data = req.body;
 
     axios(options)
       .then(results => {
-        console.log('proxy post success');
+        // console.log('proxy post success');
         res.send(results.data);
       })
       .catch(err => {

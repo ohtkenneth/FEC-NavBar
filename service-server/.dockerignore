@@ -3,7 +3,4 @@ server-build
 grunt-aws.json
 Gruntfile.js
 
-.env
-*.env
-newrelic.js
 newrelic_agent.log

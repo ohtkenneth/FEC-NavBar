@@ -2,13 +2,13 @@ const path = require('path');
 const fs = require('fs');
 const perf = require('execution-time')();
 const faker = require('faker');
-const dataWriteStream = fs.createWriteStream('./newData/data.tsv', {
+const dataWriteStream = fs.createWriteStream('./data/toJson.tsv', {
   flags: 'a',
   encoding: 'utf8',
 });
 
-let times = 10000000;
-let row = 1;
+let times = 10010000;
+let row = 10000001;
 console.log('Writing data...');
 
 function writeData() {

@@ -21,6 +21,7 @@ const config = {
 console.log(env, config);
 // default url for api
 // need to set SOME PROTOCOL e.g. http
+// dbPort refers to the node js port running
 const options = {
   url: `http://${ config[env].dbIp }:${ config[env].dbPort }/product/ads`,
 };
@@ -44,12 +45,12 @@ router.route('/ads')
   })
   .post((req, res) => { 
     options.method = 'post';
-    console.log('req body from service', req.body);
+    // console.log('req body from service', req.body);
     options.data = req.body;
     // get post
     axios(options)
       .then(results => {
-        console.log('service post success');
+        // console.log('service post success');
         res.send(results.data);
       })
       .catch(err => console.log('err from service post', err));

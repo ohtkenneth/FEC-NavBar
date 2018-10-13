@@ -24,9 +24,9 @@ const controller = {
   createAd: (req, res) => {
     // req.body contains schema
     const { id, location, size, brand, season, url } = req.body;
-    console.log('req body from db', req.body);
+    // console.log('req body from db', req.body);
 
-    mongoModels.createAd(id, location, size, brand, season, url)
+    mongoModels.createAd(+id, location, size, brand, season, url)
       .then(result => {
         // console.log('mongo create success');
         res.send(result);
