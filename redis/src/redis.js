@@ -1,4 +1,5 @@
 const redis = require('redis');
+// docker network, redis container named 'redis'
 const client = redis.createClient(6379, 'redis');
 
 client.on('error', (err) => {

@@ -11,6 +11,10 @@ const options = {
     url: `http://${balancerIp}:${balancerPort}/product/ads`,
     method: 'get',
   },
+  postAd: {
+    url: `http://${balancerIp}:${balancerPort}/product/ads`,
+    method: 'post',
+  },
 }
 console.log('default options', options);
 module.exports = {
@@ -28,7 +32,7 @@ module.exports = {
       const response = await axios(options.getIndex);
 
       res.send(response.data);
-      cache.set('index', response.data);
+      cache.set('index', JSON.stringify(response.data));
     }
   },
   async getAd(req, res) {
@@ -46,7 +50,21 @@ module.exports = {
       console.log('res', response.data);
       // send response from load balancer
       res.send(response.data);
+
+      // save to cache
+      cache.set(id, JSON.stringify(reponse.data));
     }
+  },
+  postAd(req, res) {
+    // route straight to load balancer
+    options.postAd.data = req.body;
+
+    axios(options)
+      .then(results => {
+        console.log('post data from redis', results.data);
+        res.send(results.data);
+      })
+      .catch(err => console.log('Error from post redis', err));
   }
 };
 
@@ -64,8 +82,7 @@ const cache = {
   },
   set(key, value) {
     return new Promise((resolve, reject) => {
-      const strValue = JSON.stringify(value);
-      redis.set(key, strValue, (err, result) => {
+      redis.set(key, value, (err, result) => {
         if (err) {
           reject(err);
         } else {
@@ -73,5 +90,5 @@ const cache = {
         }
       });
     });
-  }
-}
+  },
+};

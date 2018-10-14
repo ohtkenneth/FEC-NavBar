@@ -6,6 +6,7 @@ router.route('/')
 .get(controller.getIndex);
 
 router.route('/product/ads')
-.get(controller.getAd);
+.get(controller.getAd)
+.post(controller.postAd);
 
 module.exports = router;
