@@ -15,7 +15,7 @@ const options = {
     url: `http://${balancerIp}:${balancerPort}/product/ads`,
     method: 'post',
   },
-}
+};
 console.log('default options', options);
 module.exports = {
   async getIndex(req, res) {
@@ -24,7 +24,6 @@ module.exports = {
     const indexFile = await cache.get('index');
 
     if (indexFile) {
-      console.log('cached')
       res.send(indexFile);
     } else {
       // query loadbalancer
@@ -32,7 +31,8 @@ module.exports = {
       const response = await axios(options.getIndex);
 
       res.send(response.data);
-      cache.set('index', JSON.stringify(response.data));
+      // cache.set('index', JSON.stringify(response.data));
+      cache.set('index', response.data);
     }
   },
   async getAd(req, res) {
@@ -43,7 +43,7 @@ module.exports = {
 
     if (result) {
       // send cached
-      res.send(result);
+      res.send(JSON.parse(result));
     } else {
       options.getAd.params = { id };
       const response = await axios(options.getAd);
@@ -52,7 +52,8 @@ module.exports = {
       res.send(response.data);
 
       // save to cache
-      cache.set(id, JSON.stringify(reponse.data));
+      // cache.set(id, JSON.stringify(reponse.data));
+      cache.set(id, response.data);
     }
   },
   postAd(req, res) {

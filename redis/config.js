@@ -8,9 +8,9 @@ const config = {
     balancerPort: process.env.DEV_LOAD_BALANCER_PORT || 8080,
   },
   test: {
-    port: process.env.TEST_LOAD_BALANCER_IP,
+    port: process.env.TEST_APP_PORT,
     balancerIp: process.env.TEST_LOAD_BALANCER_IP,
-    balancerPort: process.env.TEST_LOAD_BALANCER_IP,
+    balancerPort: process.env.TEST_LOAD_BALANCER_PORT,
   }
 }
 
