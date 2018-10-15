@@ -28,24 +28,20 @@ app.get('/loaderio*', (req, res) => {
   res.send('loaderio-95d1127cce0c62f13b15f7963fefa0e0');
 });
 
-const url = 'http://54.183.254.162:1337';
 // route to caching server
+// initialize outside func to avoid re intializing every request
+const options = {
+  url: `http://${cacheIp}:${cachePort}`,
+  method: 'get',
+};
+
 app.get('/', (req, res) => {
   // res.send('hello world!')
-  const options = {
-    url,
-    method: 'get',
-    proxy: {
-      host: '54.67.89.152',
-      port: 80,
-    },
-  }
   axios(options)
-    .then(response => {
-      console.log(response.data);
-      res.send(response.data);
-    })
-    .catch(err => console.error(err));
+  .then(response => {
+    res.end(response.data);
+  })
+  .catch(err => console.log(err));
 });
 
 module.exports = app;
