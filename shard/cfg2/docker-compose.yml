@@ -1,0 +1,29 @@
+version: "2"
+services:
+  mongoCfg-2a:
+    container_name: mongoCfg-2a
+    image: mongo
+    command: mongod --configsvr --replSet cfg2 --dbpath /data/db --port 27017
+    expose:
+      - "27017"
+    volumes:
+      - /data/cfg2a:/data/db
+  mongoCfg-2b:
+    container_name: mongoCfg-2b
+    image: mongo
+    command: mongod --configsvr --replSet cfg2 --dbpath /data/db --port 27017
+    expose:
+      - "27017"
+    volumes:
+      - /data/cfg2b:/data/db
+  mongoCfg-2c:
+    container_name: mongoCfg-2c
+    image: mongo
+    command: mongod --configsvr --replSet cfg2 --dbpath /data/db --port 27017
+    expose:
+      - "27017"
+    volumes:
+      - /data/cfg2c:/data/db
+
+
+

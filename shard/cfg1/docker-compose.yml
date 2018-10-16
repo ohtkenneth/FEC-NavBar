@@ -1,0 +1,20 @@
+version: "2"
+services:
+  mongoC-1a:
+    container_name: mongoC-1a
+    image: mongo
+    command: mongod --configsvr --replSet cfg1 --dbpath /data/db --bind_ip localhost --port 27017
+    expose:
+      - "27017"
+  mongoC-1b:
+    container_name: mongoC-1b
+    image: mongo
+    command: mongod --configsvr --replSet cfg1 --dbpath /data/db --bind_ip localhost --port 27017
+    expose:
+      - "27017"
+  mongoC-1c:
+    container_name: mongoC-1c
+    image: mongo
+    command: mongod --configsvr --replSet cfg1 --dbpath /data/db --bind_ip localhost --port 27017
+    expose:
+      - "27017"

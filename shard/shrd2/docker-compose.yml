@@ -1,0 +1,32 @@
+version: "2"
+services:
+  mongoRep-2a:
+    container_name: mongoRep-2a
+    image: mongo
+    command: mongod --shardsvr --replSet rs2 --dbpath /data/db --port 27017
+    ports:
+      - 27017:27017
+    expose:
+      - "27017"
+    volumes:
+      - /data/rep1a:/data/db
+  mongoRep-2b:
+    container_name: mongoRep-2b
+    image: mongo
+    command: mongod --shardsvr --replSet rs2 --dbpath /data/db --port 27017
+    ports:
+      - 27027:27017
+    expose:
+      - "27017"
+    volumes:
+      - /data/rep1b:/data/db
+  mongoRep-2c:
+    container_name: mongoRep-2c
+    image: mongo
+    command: mongod --shardsvr --replSet rs2 --dbpath /data/db --port 27017
+    ports:
+      - 27037:27017
+    expose:
+      - "27017"
+    volumes:
+      - /data/rep2c:/data/db

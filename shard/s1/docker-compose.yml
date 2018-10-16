@@ -1,0 +1,12 @@
+version: "2"
+services:
+  mongoS-1:
+    container_name: mongoS-1
+    image: mongo
+    command: mongos --configdb cfg1/mongoC-1:27017,mongoConfig-2:27017,mongoConfig-3:27017 --port 27017
+    ports:
+      - 27019:27017
+    expose:
+      - "27017"
+    volumes:
+      - /data/s1:/data/db
