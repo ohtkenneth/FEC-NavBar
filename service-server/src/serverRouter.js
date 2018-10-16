@@ -1,7 +1,8 @@
 require('dotenv').config();
-import express from 'express';
-import axios from 'axios';
+const express = require('express');
+const axios = require('axios');
 const router = express.Router();
+const { findAd, createAd } = require('../db/models');
 
 // create config file here since experiencing trouble importing config 
 // once server bundle is created
@@ -33,23 +34,22 @@ router.route('/ads')
     // get method expects query string with id
     // const randId = Math.floor(Math.random() * (10000000 - 9000000 + 1)+9000000);
 
-    options.method = 'get';
-
-    // console.log('getting id in service', req.query.id);
-    options.params = {
-      id: req.query.id,
-      // id: randId,
-    },
-
-    axios(options)
-      .then(results => {
-        // console.log('service get succcess');
-        res.send(results.data);
+    // need to cast id to number
+    findAd(+req.query.id)
+      .then(result => {
+        // console.log(result);
+        res.send(result)
       })
-      .catch(err => console.log('ERROR from get', err));
-    // axios.get('http://127.0.0.1:8000/product/ads?id=4')
-    //   .then((result) => console.log(result))
-    //   .catch(err => console.log(err));
+      .catch(err => {
+        console.log('err from service db', err);
+      })
+
+    // axios(options)
+    //   .then(results => {
+    //     // console.log('service get succcess');
+    //     res.send(results.data);
+    //   })
+    //   .catch(err => console.log('ERROR from get', err));
   })
   .post((req, res) => { 
     options.method = 'post';
@@ -70,4 +70,4 @@ router.route('/ads')
     options.method = 'delete';
   });
 
-export default router;
+module.exports = router;

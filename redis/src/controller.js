@@ -19,7 +19,6 @@ const options = {
 console.log('default options', options);
 module.exports = {
   async getIndex(req, res) {
-    console.log('getting index')
     // check if index file is in cache
     const indexFile = await cache.get('index');
 
@@ -27,7 +26,7 @@ module.exports = {
       res.send(indexFile);
     } else {
       // query loadbalancer
-      console.log('getting load');
+      // console.log('getting load');
       const response = await axios(options.getIndex);
 
       res.send(response.data);
@@ -38,7 +37,7 @@ module.exports = {
   async getAd(req, res) {
     // check if ad is in cache
     const { id } = req.query;
-    console.log('getting id', id);
+    // console.log('getting id', id);
     const result = await cache.get(id);
 
     if (result) {
@@ -47,13 +46,13 @@ module.exports = {
     } else {
       options.getAd.params = { id };
       const response = await axios(options.getAd);
-      console.log('res', response.data);
       // send response from load balancer
       res.send(response.data);
 
       // save to cache
       // cache.set(id, JSON.stringify(reponse.data));
-      cache.set(id, response.data);
+      // console.log(response.data);
+      cache.set(id, JSON.stringify(response.data));
     }
   },
   postAd(req, res) {
@@ -62,7 +61,7 @@ module.exports = {
 
     axios(options)
       .then(results => {
-        console.log('post data from redis', results.data);
+        // console.log('post data from redis', results.data);
         res.send(results.data);
       })
       .catch(err => console.log('Error from post redis', err));

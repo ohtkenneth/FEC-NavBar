@@ -17,8 +17,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // if (process.env.NODE_ENV === 'dev') {
 //   app.use(morgan('dev'));
 // }
-app.use(morgan('dev'));
+// app.use(morgan('dev'));
 
 app.use('/', router);
+
+// loader io verification
+app.get('/loader*', (req, res) => {
+  res.send('loaderio-95d1127cce0c62f13b15f7963fefa0e0');
+});
 
 module.exports = app;

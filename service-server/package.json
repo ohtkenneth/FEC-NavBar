@@ -5,7 +5,7 @@
   "main": "webpack.server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./server-build index.js",
+    "start": "node ./src/server.js",
     "build:ssr-dev": "webpack --config webpack.server.js --mode development"
   },
   "author": "",
@@ -24,6 +24,7 @@
     "dotenv": "^6.0.0",
     "dotenv-webpack": "^1.5.7",
     "express": "^4.16.3",
+    "mongodb": "^3.1.8",
     "newrelic": "^4.9.0",
     "nodemon": "^1.18.4",
     "react": "^16.5.2",

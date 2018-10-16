@@ -18,8 +18,14 @@ app.use(parser.urlencoded({ extended: true }));
 if (process.env.NODE_ENV === 'dev') {
   app.use(morgan('dev'));
 }
+// app.use(morgan('dev'));
 
 app.use('/product', router);
+
+app.get('/loader*', (req, res) => {
+  res.send('loaderio-8478e392d21d5d6f22aaf0c2da837add');
+});
+
 
 app.listen(PORT, () => {
   console.log('config', config);

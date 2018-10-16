@@ -8,7 +8,7 @@ const controller = {
     // get rand int from 9million to 10million
     // let randId = Math.floor(Math.random() * (10000000 - 9000000 + 1)+9000000);
     const { id } = req.query;
-    console.log(id);
+    // console.log('getting id from db', id);
     // console.log('getting rand id', randId);
     mongoModels.findAd(+id)
       .then(result => {

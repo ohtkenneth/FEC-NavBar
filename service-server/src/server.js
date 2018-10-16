@@ -1,20 +1,14 @@
 // import env from 'dotenv';
 // env.config();
-import 'newrelic';
+require('newrelic');
 require('dotenv').config();
-import path from 'path';
-import React from 'react';
-import express from 'express';
-import ReactDOMServer from 'react-dom/server';
-import { ServerStyleSheet } from 'styled-components';
-import morgan from 'morgan';
-import parser from 'body-parser';
-import cors from 'cors';
+const path = require('path');
+const express = require('express');
+const morgan = require('morgan');
+const parser = require('body-parser');
+const cors = require('cors');
 
-// client index
-import App from '../client/components/app';
-import Html from './Html.js';
-import router from './router.js';
+const router = require('./serverRouter.js');
 
 const PORT = 3000;
 // const PORT = process.env.DEV_APP_PORT;
@@ -28,7 +22,7 @@ if (process.env.NODE_ENV === 'dev') {
   app.use(morgan('dev'));
 }
 
-app.use(morgan('dev'));
+// app.use(morgan('dev'));
 
 app.use(express.static(path.resolve(__dirname, '../static')));
 
