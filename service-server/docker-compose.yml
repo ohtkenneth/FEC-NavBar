@@ -1,0 +1,10 @@
+version: "2"
+services:
+  module:
+    build: .
+  mongoS-1:
+    container_name: mongoS
+    image: mongo
+    command: mongos --configdb cfg1/172.31.14.168:27017,172.31.13.114:27017,172.31.5.84:27017
+    expose:
+      - "27017"
