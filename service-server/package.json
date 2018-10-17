@@ -5,7 +5,7 @@
   "main": "webpack.server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./src/server.js",
+    "start": "node ./src/cluster.js",
     "build:ssr-dev": "webpack --config webpack.server.js --mode development"
   },
   "author": "",
