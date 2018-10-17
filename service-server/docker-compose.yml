@@ -1,19 +1,23 @@
 version: "2"
 services:
-  module:
-    build: .
-    expose:
-      - "3000"
-    restart: always
   mongoS:
-    depends_on:
-      - module
-    image: mongo
     container_name: mongoS
+    image: mongo
+    command: mongos --configdb cfg1/172.31.14.168:27017,172.31.13.114:27017,172.31.5.84:27017
     expose:
       - "27017"
+    ports:
+      - 27017:27017
     volumes:
-      - "./mongos/setup.sh"
-    command:
-      - setup.sh
+      - /data/s1:/data/db
     restart: always
+  module:
+    container_name: module
+    image: ohtkenneth/navbar-service:1
+    expose:
+      - "3000"
+    ports:
+      - 3000:3000
+    restart: always
+    depends_on:
+      - mongoS
