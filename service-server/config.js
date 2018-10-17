@@ -9,8 +9,8 @@ const dev = {
 
 const test = {
   appPort: process.env.TEST_APP_PORT || 8000,
-  port: process.env.TEST_DB_PORT || 27017,
-  serverIp: process.env.TEST_DB_SERVER_IP,
+  dbPort: process.env.TEST_DB_PORT || 27017,
+  dbIp: process.env.TEST_DB_IP,
   name: process.env.TEST_DB_NAME,
 };
 

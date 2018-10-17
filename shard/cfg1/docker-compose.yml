@@ -3,18 +3,34 @@ services:
   mongoC-1a:
     container_name: mongoC-1a
     image: mongo
-    command: mongod --configsvr --replSet cfg1 --dbpath /data/db --bind_ip localhost --port 27017
+    command: mongod --configsvr --replSet cfg1 --dbpath /data/db --port 27017 --bind_ip 0.0.0.0
     expose:
       - "27017"
+    volumes:
+      - /data/cfg1a:/data/db
+    ports:
+      - 27017:27017
   mongoC-1b:
     container_name: mongoC-1b
     image: mongo
-    command: mongod --configsvr --replSet cfg1 --dbpath /data/db --bind_ip localhost --port 27017
-    expose:
+    command: mongod --configsvr --replSet cfg1 --dbpath /data/db --port 27017 --bind_ip 0.0.0.0
+    expose: 
       - "27017"
+    ports:
+      - 27017:27017
+    volumes:
+      - /data/cfg1b:/data/db
   mongoC-1c:
     container_name: mongoC-1c
     image: mongo
-    command: mongod --configsvr --replSet cfg1 --dbpath /data/db --bind_ip localhost --port 27017
+    command: mongod --configsvr --replSet cfg1 --dbpath /data/db --port 27017 --bind_ip 0.0.0.0
     expose:
       - "27017"
+    ports:
+      - 27017:27017
+    volumes:
+      - /data/cfg1c:/data/db
+
+rs.initiate({ _id: "cfg1", configsvr: true, members: [ { _id: 0, host: "172.31.14.168:27017" },  { _id: 1, host: "172.31.14.168:27018" }, { _id: 2, host: "172.31.14.168:27019" }]})
+
+rs.initiate({ _id: "cfg1", configsvr: true, members: [ { _id: 0, host: "172.31.14.168:27017" },  { _id: 1, host: "172.31.13.114:27017" }, { _id: 2, host: "172.31.5.84:27017" }]})

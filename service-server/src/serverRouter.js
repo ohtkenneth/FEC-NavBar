@@ -8,24 +8,13 @@ const { findAd, createAd } = require('../db/models');
 // once server bundle is created
 // env vars should be coming from .env during dev and Docker during testing
 const env = process.env.NODE_ENV;
-const config = {
-  dev: {
-    dbIp: process.env.DEV_DB_SERVER_IP,
-    dbPort: process.env.DEV_DB_PORT,
-  },
-  test: {
-    dbIp: process.env.TEST_DB_SERVER_IP,
-    dbPort: process.env.TEST_DB_PORT,
-  },
-};
 
-console.log(env, config);
 // default url for api
 // need to set SOME PROTOCOL e.g. http
 // dbPort refers to the node js port running
-const options = {
-  url: `http://${ config[env].dbIp }:${ config[env].dbPort }/product/ads`,
-};
+// const options = {
+//   url: `http://${ config[env].dbIp }:${ config[env].dbPort }/product/ads`,
+// };
 // axios requests to db server
 // set methods on options as well
 

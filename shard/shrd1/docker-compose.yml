@@ -1,32 +1,36 @@
 version: "2"
 services:
-  mongoRep-1a:
-    container_name: mongoRep-1a
+  mongoR-1a:
+    container_name: mongoR-1a
     image: mongo
-    command: mongod --shardsvr --replSet rs1 --dbpath /data/db --port 27017
+    command: mongod --shardsvr --replSet rs1 --dbpath /data/db --port 27017 --bind_ip 0.0.0.0
     ports:
       - 27017:27017
     expose:
       - "27017"
     volumes:
       - /data/rep1a:/data/db
-  mongoRep-1b:
-    container_name: mongoRep-1b
+  mongoR-1b:
+    container_name: mongoR-1b
     image: mongo
-    command: mongod --shardsvr --replSet rs1 --dbpath /data/db --port 27017
+    command: mongod --shardsvr --replSet rs1 --dbpath /data/db --port 27017 --bind_ip 0.0.0.0
     ports:
-      - 27027:27017
+      - 27017:27017
     expose:
       - "27017"
     volumes:
       - /data/rep1b:/data/db
-  mongoRep-1c:
-    container_name: mongoRep-1c
+  mongoR-1c:
+    container_name: mongoR-1c
     image: mongo
-    command: mongod --shardsvr --replSet rs1 --dbpath /data/db --port 27017
+    command: mongod --shardsvr --replSet rs1 --dbpath /data/db --port 27017 --bind_ip 0.0.0.0
     ports:
-      - 27037:27017
+      - 27017:27017
     expose:
       - "27017"
     volumes:
       - /data/rep1c:/data/db
+
+rs.initiate({ _id: "rs1", members: [ { _id: 0, host: "172.31.7.236:27017" }, { _id: 1, host: "172.31.7.236:27027" }, { _id: 2, host: "172.31.7.236:27037" } ]})
+
+rs.initiate({ _id: "rs1", members: [ { _id: 0, host: "172.31.7.236:27017" }, { _id: 1, host: "172.31.7.223:27017" }, { _id: 2, host: "172.31.1.138:27017" } ]})
