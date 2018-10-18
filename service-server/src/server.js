@@ -1,6 +1,6 @@
 // import env from 'dotenv';
 // env.config();
-require('newrelic');
+// require('newrelic');
 require('dotenv').config();
 const path = require('path');
 const express = require('express');
@@ -44,11 +44,12 @@ app.get('/', (req, res) => {
 });
 
 app.get('/loader*', (req, res) => {
-  res.send('loaderio-8478e392d21d5d6f22aaf0c2da837add');
+  res.send('loaderio-c2b83bc3b4cbb0f88b56c167bc8d05f7');
 });
 
 app.listen(PORT, () => {
-  console.log(`SSR listening on port ${PORT} as ${process.env.NEW_RELIC_NAME}`);
+  // console.log(`SSR listening on port ${PORT} as ${process.env.NEW_RELIC_NAME}`);
+  console.log(`SSR listening on port ${PORT}`);
 })
 
 

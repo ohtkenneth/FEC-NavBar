@@ -1,6 +1,6 @@
 // import env from 'dotenv';
 // env.config();
-import 'newrelic';
+import "@babel/polyfill";
 require('dotenv').config();
 import path from 'path';
 import React from 'react';
@@ -14,7 +14,7 @@ import cors from 'cors';
 // client index
 import App from '../client/components/app';
 import Html from './Html.js';
-import router from './router.js';
+import router from './ssrRouter';
 
 const PORT = 3000;
 // const PORT = process.env.DEV_APP_PORT;
@@ -27,8 +27,7 @@ app.use(parser.urlencoded({ extended: true }));
 if (process.env.NODE_ENV === 'dev') {
   app.use(morgan('dev'));
 }
-
-app.use(morgan('dev'));
+// app.use(morgan('dev'));
 
 app.use(express.static(path.resolve(__dirname, '../static')));
 
@@ -36,25 +35,26 @@ app.use(express.static(path.resolve(__dirname, '../static')));
 app.use('/product', router);
 // only endpoint being used is product/ads
 
+// generate once
+const sheet = new ServerStyleSheet();
+// extract html
+const body = ReactDOMServer.renderToString(sheet.collectStyles(<App />));
+// extract style tags to inject into html template
+const styleTags = sheet.getStyleTags();
+
 app.get('/', (req, res) => {
-  res.send('hello world');
   // app is client App
-  // const sheet = new ServerStyleSheet();
-  // // extract html
-  // const body = ReactDOMServer.renderToString(sheet.collectStyles(<App />));
-  // // extract style tags to inject into html template
-  // const styleTags = sheet.getStyleTags();
-  // res.send(
-  //   Html(body, styleTags)
-  // );
+  res.send(
+    Html(body, styleTags)
+  );
 });
 
 app.get('/loader*', (req, res) => {
-  res.send('loaderio-8478e392d21d5d6f22aaf0c2da837add');
+  res.send('loaderio-c2b83bc3b4cbb0f88b56c167bc8d05f7');
 });
 
 app.listen(PORT, () => {
-  console.log(`SSR listening on port ${PORT} as ${process.env.NEW_RELIC_NAME}`);
-})
-
+  // console.log(`SSR listening on port ${PORT} as ${process.env.NEW_RELIC_NAME}`);
+  console.log(`SSR listening on port ${PORT}`);
+});
 

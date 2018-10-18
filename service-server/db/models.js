@@ -18,25 +18,17 @@ async function findAd(id) {
   }
 }
 
-async function createAd(id, location, size, brand, season, url) {
+// data should be object with all fields id, location, size, brand, season, url
+async function createAd(data) {
   try {
     const results = await connection
-                      .then(collection => collection.insertOne({ id, location, size, brand, season, url }));
+                      .then(collection => collection.insertOne(data));
     return results
   } catch (err) {
     console.log(err);
     return err;
   }
 }
-
-// async function createAd(id, location, size, brand, season, url) {
-//   try {
-//     const result = await Ad.create({ id, location, size, brand, season, url });
-//     return result;
-//   } catch(err) {
-//     return err;
-//   }
-// }
 
 async function updateAd(id, options) {
   try {

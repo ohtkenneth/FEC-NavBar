@@ -5,7 +5,7 @@ const cores = require('os').cpus().length;
 // if cluster is master, take care of managing child processes
 if (cluster.isMaster) {
   // create cluster
-  for (let i = 0; i < 2; i++) {
+  for (let i = 0; i < cores; i++) {
     cluster.fork();
   }
   // whenever a cluster dies, create a replacement one
@@ -13,5 +13,5 @@ if (cluster.isMaster) {
     cluster.fork();
   });
 } else {
-  require('./server.js');
+  require('./ssr.js');
 }
