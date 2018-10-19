@@ -17,7 +17,7 @@ const db = MongoClient
   })
   .then(db => db.collection('advertisements'))
   .catch(err => {
-    console.log('Error connecting to mongodb at', url);
+    console.log('Error connecting to mongodb at', err);
   });
 
 module.exports = db;

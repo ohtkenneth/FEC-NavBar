@@ -19,8 +19,9 @@ router.route('/ads')
         console.log('err from service db', err);
       })
   })
-  .post((req, res) => { 
-    createAd(req,body)
+  .post((req, res) => {
+    req.body.id = +req.body.id; 
+    createAd(req.body)
       .then(result => {
         res.send(result);
       })

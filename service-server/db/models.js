@@ -1,6 +1,4 @@
 // const Client = require('./index');
-const config = require('../config');
-const assert = require('assert');
 // const { adSchema, searchSchema, photoSchema } = require('./schema.js');
 
 // mongodb connection

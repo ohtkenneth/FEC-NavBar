@@ -3,7 +3,6 @@ node_modules
 Gruntfile.js
 grunt-aws.json
 .bablerc
-Dockerfile
 secret
 .env
 server-build

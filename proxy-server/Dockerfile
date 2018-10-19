@@ -3,8 +3,6 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
-EXPOSE 3000
-RUN mkdir server-build
-# Run commands inside bash
-RUN npm run build:ssr-dev
+EXPOSE 80
+
 CMD ["npm", "start"]

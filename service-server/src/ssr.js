@@ -1,5 +1,4 @@
-// import env from 'dotenv';
-// env.config();
+// import 'newrelic';
 import "@babel/polyfill";
 require('dotenv').config();
 import path from 'path';
