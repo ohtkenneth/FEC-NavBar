@@ -12,4 +12,4 @@ env:
 install:
   - npm install
 script:
-  - npm test
+  - npm build:ssr-dev
