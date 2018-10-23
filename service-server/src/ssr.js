@@ -15,8 +15,7 @@ import App from '../client/components/app';
 import Html from './Html.js';
 import router from './ssrRouter';
 
-const PORT = 3000;
-// const PORT = process.env.DEV_APP_PORT;
+const PORT = process.env.DEV_APP_PORT;
 const app = express();
 
 app.use(cors());
@@ -26,13 +25,11 @@ app.use(parser.urlencoded({ extended: true }));
 if (process.env.NODE_ENV === 'dev') {
   app.use(morgan('dev'));
 }
-// app.use(morgan('dev'));
 
 app.use(express.static(path.resolve(__dirname, '../static')));
 
 // ROUTES
 app.use('/product', router);
-// only endpoint being used is product/ads
 
 // generate once
 const sheet = new ServerStyleSheet();
@@ -53,7 +50,6 @@ app.get('/loader*', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  // console.log(`SSR listening on port ${PORT} as ${process.env.NEW_RELIC_NAME}`);
   console.log(`SSR listening on port ${PORT}`);
 });
 

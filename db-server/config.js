@@ -8,8 +8,8 @@ const dev = {
 };
 
 const test = {
-  appPort: process.env.TEST_APP_PORT || 8000,
-  port: process.env.TEST_DB_PORT || 27017,
+  appPort: process.env.TEST_APP_PORT,
+  port: process.env.TEST_DB_PORT,
   serverIp: process.env.TEST_DB_SERVER_IP,
   name: process.env.TEST_DB_NAME,
 };
@@ -17,6 +17,6 @@ const test = {
 const config = {
   dev,
   test,
-}
+};
 
 module.exports = config[env];

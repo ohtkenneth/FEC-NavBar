@@ -1,5 +1,4 @@
 const cluster = require('cluster');
-// get num of cpu cores on current machine
 const cores = require('os').cpus().length;
 
 // if cluster is master, take care of managing child processes

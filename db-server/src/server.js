@@ -18,10 +18,10 @@ app.use(parser.urlencoded({ extended: true }));
 if (process.env.NODE_ENV === 'dev') {
   app.use(morgan('dev'));
 }
-// app.use(morgan('dev'));
 
 app.use('/product', router);
 
+// token for loaderio auth
 app.get('/loader*', (req, res) => {
   res.send('loaderio-8478e392d21d5d6f22aaf0c2da837add');
 });

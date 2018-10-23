@@ -1,15 +1,15 @@
 config:
   target: 'http://localhost:5000'
-  # target: 'http://localhost:8000'
-  # payload:
-  #   path: "./test/testArtillery.csv"
-  #   fields:
-  #     - "id"
-  #     - "location"
-  #     - "size"
-  #     - "brand"
-  #     - "season"
-  #     - "url"
+  target: 'http://localhost:8000'
+  payload:
+    path: "./test/testArtillery.csv"
+    fields:
+      - "id"
+      - "location"
+      - "size"
+      - "brand"
+      - "season"
+      - "url"
   phases:
     - duration: 30
       arrivalRate: 25
@@ -20,16 +20,16 @@ scenarios:
           url: "/product/ads"
       - think: 1
       count: 30
-    # - get:
-    #     url: "/"
-    # - post:
-    #     url: "/product/ads"
-    #     json:
-    #       id: "{{ id }}"
-    #       location: "{{ location }}"
-    #       size: "{{ size }}"
-    #       brand: "{{ brand }}"
-    #       season: "{{ season }}"
-    #       url: "{{ url }}"
+    - get:
+        url: "/"
+    - post:
+        url: "/product/ads"
+        json:
+          id: "{{ id }}"
+          location: "{{ location }}"
+          size: "{{ size }}"
+          brand: "{{ brand }}"
+          season: "{{ season }}"
+          url: "{{ url }}"
 
 
